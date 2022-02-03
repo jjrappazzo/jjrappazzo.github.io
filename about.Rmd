@@ -3,3 +3,9 @@ title: "About Me"
 ---
 
 Why I am awesome.
+
+Name: Jason Rappazzo
+
+Occupation: Student
+
+Hobbies: Learning data analytics.
