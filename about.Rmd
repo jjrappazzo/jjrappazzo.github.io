@@ -6,5 +6,9 @@ Name: Jason Rappazzo
 
 Occupation: Student
 
-Hobbies: Track and Field, Hiking, Walking, and Data Analytics
+Major: Economics
+
+Minor: Data Analytics
+
+Hobbies: Track and Field, Hiking, Walking, Coffee, and Data Analytics
 

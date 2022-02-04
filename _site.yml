@@ -1,7 +1,7 @@
-name: "Personal Website"
+name: "Jason Rappazzo"
 output_dir: "."
 navbar:
-  title: "Personal Website"
+  title: "Jason Rappazzo"
   left:
     - text: "Home"
       href: index.html
@@ -11,5 +11,5 @@ navbar:
       href: project.html
 output:
   html_document:
-    theme: paper
+    theme: readable
     css: style.css
