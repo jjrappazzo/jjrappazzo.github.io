@@ -6,6 +6,5 @@ Name: Jason Rappazzo
 
 Occupation: Student
 
-Hobbies: Learning data analytics.
+Hobbies: Track and Field, Hiking, Walking, and Data Analytics
 
-test
