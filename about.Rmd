@@ -2,13 +2,13 @@
 title: "About Me"
 ---
 
-Name: Jason Rappazzo
+**Name:** Jason Rappazzo
 
-Occupation: Student
+**Occupation:** Student
 
-Major: Economics
+**Major:** Economics
 
-Minor: Data Analytics
+**Minor:** Data Analytics
 
-Hobbies: Track and Field, Hiking, Walking, Coffee, and Data Analytics
+**Hobbies:** Track and Field, Hiking, Walking, Coffee, and Data Analytics
 
