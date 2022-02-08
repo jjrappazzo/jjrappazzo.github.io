@@ -2,6 +2,6 @@
 title: "My resume"
 ---
 
-Here is a link to my resume.
+Here is my resume.
 
-Work in progress
+![](Jason Rappazzo Resume.pdf){width=1000px height=1000px}
