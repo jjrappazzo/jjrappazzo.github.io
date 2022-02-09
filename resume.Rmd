@@ -2,6 +2,4 @@
 title: "My resume"
 ---
 
-Here is my resume.
-
 ![](Jason Rappazzo Resume.pdf){width=1000px height=1000px}
