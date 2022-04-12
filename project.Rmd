@@ -18,7 +18,7 @@ The first regression model's dependent variable will be monthly covid deaths.
 
 The second regression model's dependent variable is the reproductive rate. This is essentially the spreadability of the virus itself.
 
-The third regression involves the economic impact and our dependent variable will be quarterly GDP.
+The third regression involves the economic impact and our dependent variable will be changes in quarterly GDP.
 
 
 For all linear regression models, we are in the process of finding proper explanatory variables.
