@@ -9,14 +9,18 @@
 <meta http-equiv="X-UA-Compatible" content="IE=EDGE" />
 
 
+<meta name="author" content="Jason Rappazzo" />
+<meta name="author" content="James Jordon" />
+<meta name="author" content=" " />
 
+<meta name="date" content="2022-04-14" />
 
 <title>Covid-19 Research Project</title>
 
 <script src="site_libs/header-attrs-2.11/header-attrs.js"></script>
 <script src="site_libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<link href="site_libs/bootstrap-3.3.5/css/readable.min.css" rel="stylesheet" />
+<link href="site_libs/bootstrap-3.3.5/css/united.min.css" rel="stylesheet" />
 <script src="site_libs/bootstrap-3.3.5/js/bootstrap.min.js"></script>
 <script src="site_libs/bootstrap-3.3.5/shim/html5shiv.min.js"></script>
 <script src="site_libs/bootstrap-3.3.5/shim/respond.min.js"></script>
@@ -29,9 +33,12 @@
        h6 {font-size: 12px;}
        code {color: inherit; background-color: rgba(0, 0, 0, 0.04);}
        pre:not([class]) { background-color: white }</style>
+<script src="site_libs/jqueryui-1.11.4/jquery-ui.min.js"></script>
+<link href="site_libs/tocify-1.9.1/jquery.tocify.css" rel="stylesheet" />
+<script src="site_libs/tocify-1.9.1/jquery.tocify.js"></script>
 <script src="site_libs/navigation-1.1/tabsets.js"></script>
-<link href="site_libs/highlightjs-9.12.0/default.css" rel="stylesheet" />
-<script src="site_libs/highlightjs-9.12.0/highlight.js"></script>
+<link href="site_libs/pagedtable-1.1/css/pagedtable.css" rel="stylesheet" />
+<script src="site_libs/pagedtable-1.1/js/pagedtable.js"></script>
 
 <style type="text/css">
   code{white-space: pre-wrap;}
@@ -42,16 +49,6 @@
   ul.task-list{list-style: none;}
     </style>
 
-<style type="text/css">code{white-space: pre;}</style>
-<script type="text/javascript">
-if (window.hljs) {
-  hljs.configure({languages: []});
-  hljs.initHighlightingOnLoad();
-  if (document.readyState && document.readyState === "complete") {
-    window.setTimeout(function() { hljs.initHighlighting(); }, 0);
-  }
-}
-</script>
 
 
 
@@ -219,6 +216,69 @@ $(document).ready(function () {
 
 
 
+<style type="text/css">
+
+#TOC {
+  margin: 25px 0px 20px 0px;
+}
+@media (max-width: 768px) {
+#TOC {
+  position: relative;
+  width: 100%;
+}
+}
+
+@media print {
+.toc-content {
+  /* see https://github.com/w3c/csswg-drafts/issues/4434 */
+  float: right;
+}
+}
+
+.toc-content {
+  padding-left: 30px;
+  padding-right: 40px;
+}
+
+div.main-container {
+  max-width: 1200px;
+}
+
+div.tocify {
+  width: 20%;
+  max-width: 260px;
+  max-height: 85%;
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+  div.tocify {
+    width: 25%;
+  }
+}
+
+@media (max-width: 767px) {
+  div.tocify {
+    width: 100%;
+    max-width: none;
+  }
+}
+
+.tocify ul, .tocify li {
+  line-height: 20px;
+}
+
+.tocify-subheader .tocify-item {
+  font-size: 0.90em;
+}
+
+.tocify .list-group-item {
+  border-radius: 0px;
+}
+
+
+</style>
+
+
 
 </head>
 
@@ -226,6 +286,16 @@ $(document).ready(function () {
 
 
 <div class="container-fluid main-container">
+
+
+<!-- setup 3col/9col grid for toc_float and main content  -->
+<div class="row">
+<div class="col-xs-12 col-sm-4 col-md-3">
+<div id="TOC" class="tocify">
+</div>
+</div>
+
+<div class="toc-content col-xs-12 col-sm-8 col-md-9">
 
 
 
@@ -267,25 +337,32 @@ $(document).ready(function () {
 
 
 <h1 class="title toc-ignore">Covid-19 Research Project</h1>
+<h3 class="subtitle">Business Analytics Competition 2022<br><br></h3>
+<h4 class="author">Jason Rappazzo</h4>
+<h4 class="author">James Jordon</h4>
+<h4 class="author"><br></h4>
+<h4 class="date">April 14, 2022<br><br></h4>
 
 </div>
 
 
 <p><strong>Overview</strong></p>
 <p>For our project we have chosen to analyze covid related data. As we all know, COVID-19 has impacted just about everyone around the world. Over the past two years, COVID-19 has filled hospitals worldwide and taken countless lives in the process. We want to look at government responses to see how certain countries handled the pandemic.</p>
-<p><strong>Data</strong></p>
+<p><br> <strong>Data</strong></p>
 <p>For our data analysis we have the data provided by Oxford titled Oxford Covid Government Response Variables. The main categories in this dataset that we will be utilizing includes countries, continents, dates (particularly daily dates), total cases of covid-19, total number of covid-19 deaths, total number of vaccinated people, total number of fully vaccinated people, population, population density, median age, percentage of people 65 and older, GDP per capita, and many others. We will also be utilizing data provided by Bloomberg. They have created resiliency scores for the 53 top economies in the world.</p>
-<p><strong>Modeling</strong></p>
+<p><br> <strong>Modeling</strong></p>
 <p>We plan to build multiple linear regression models.</p>
 <p>The first regression model’s dependent variable will be monthly covid deaths.</p>
 <p>The second regression model’s dependent variable is the reproductive rate. This is essentially the spreadability of the virus itself.</p>
 <p>The third regression involves the economic impact and our dependent variable will be changes in quarterly GDP.</p>
 <p>For all linear regression models, we are in the process of finding proper explanatory variables.</p>
-<p><strong>Visualizations</strong></p>
+<p><br> <strong>Visualizations</strong></p>
 <p>We are going to make visualizations using ggplot, plotly, and others to increase the readability of our findings. It is important to become educated on the factors that affect covid deaths in the event another global pandemic becomes present.We hope to display trends that may not be apparently obvious in the hopes that this will aid in the current pandemic and future health problems to come.</p>
 
 
 
+</div>
+</div>
 
 </div>
 
@@ -318,6 +395,35 @@ $(document).ready(function () {
 
 <!-- code folding -->
 
+<script>
+$(document).ready(function ()  {
+
+    // temporarily add toc-ignore selector to headers for the consistency with Pandoc
+    $('.unlisted.unnumbered').addClass('toc-ignore')
+
+    // move toc-ignore selectors from section div to header
+    $('div.section.toc-ignore')
+        .removeClass('toc-ignore')
+        .children('h1,h2,h3,h4,h5').addClass('toc-ignore');
+
+    // establish options
+    var options = {
+      selectors: "h1,h2",
+      theme: "bootstrap3",
+      context: '.toc-content',
+      hashGenerator: function (text) {
+        return text.replace(/[.\\/?&!#<>]/g, '').replace(/\s/g, '_');
+      },
+      ignoreSelector: ".toc-ignore",
+      scrollTo: 0
+    };
+    options.showAndHide = true;
+    options.smoothScroll = true;
+
+    // tocify
+    var toc = $("#TOC").tocify(options).data("toc-tocify");
+});
+</script>
 
 <!-- dynamically load mathjax for compatibility with self-contained -->
 <script>
