@@ -1,5 +1,9 @@
 ---
 title: "My resume"
+output:
+  html_document:
+    theme: united
+    highlight: tango
 ---
 
 ![](Jason Rappazzo Resume.pdf){width=1000px height=1000px}

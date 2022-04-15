@@ -1,5 +1,9 @@
 ---
 title: "Personal Website"
+output:
+  html_document:
+    theme: united
+    highlight: tango
 ---
 ___
 
