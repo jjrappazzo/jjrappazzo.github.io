@@ -50,5 +50,56 @@ For all linear regression models, we are in the process of finding proper explan
 We are going to make visualizations using ggplot, plotly, and others to increase the readability of our findings. It is important to become educated on the factors that affect covid deaths in the event another global pandemic becomes present.We hope to display trends that may not be apparently obvious in the hopes that this will aid in the current pandemic and future health problems to come.
 
 # Data and Summary Statistics
+```{r, echo=FALSE}
+library(readxl)
+library(tidyverse)
+library(skimr)
 
+```
+
+<br>
+
+## Oxford Data
+```{r, collapse=TRUE, warning=FALSE, message=FALSE}
+#Path name for the dataset
+oxford <- "https://raw.githubusercontent.com/OxCGRT/covid-policy-tracker/master/data/OxCGRT_latest.csv"
+
+#Read csv file
+oxford <- read_csv(oxford)
+oxford <- rename(oxford, country = CountryName)
+
+rmarkdown::paged_table(oxford)
+```
+<br>
+
+### Summary Statistics For Oxford Data
+```{r, collapse=TRUE, warning=FALSE, message=FALSE}
+sum_oxford <- skim(oxford)
+skim(oxford)
+```
+<br>
+
+
+## Country Information Data
+```{r, collapse=TRUE, warning=FALSE, message=FALSE}
+
+#Path name for the dataset
+country_info <- "https://covid.ourworldindata.org/data/owid-covid-data.csv"
+
+
+#Read csv file
+country_info <- read_csv(country_info)
+country_info <- country_info %>% 
+  rename(country = location ) %>% 
+  select(country, everything())
+
+rmarkdown::paged_table(country_info)
+```
+<br>
+
+### Country Information Summary Statistics
+```{r, collapse=TRUE, warning=FALSE, message=FALSE}
+sum_countries <- skim(country_info)
+skim(country_info)
+```
 
