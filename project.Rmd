@@ -5,7 +5,7 @@ author:
   - "Jason Rappazzo"
   - "James Jordon"
   - <br>
-date: "April 14, 2022<br><br>"
+date: "April 14, 2022<br><br><br>"
 output: 
   html_document:
     df_print: paged
@@ -20,20 +20,23 @@ output:
 # Project Overview
 
 For our project we have chosen to analyze government COVID-19 related data. As we all know, COVID-19 has impacted just about everyone around the world. Over the past two years, COVID-19 has filled hospitals worldwide and taken countless lives in the process. We want to look at the data to:
-<br>
- - Find trends in government responses.
-<br>
- - Discover factors that contribute to COVID-19 deaths.
-<br> 
- - Explore the reproductive rate of COVID-19.
-<br>
- - Look at how the pandemic impacted the growth rates of economies around the world.
+
+
+* Find trends in government responses in response to the pandemic.
+
+* Discover factors that contribute to COVID-19 deaths.
+
+* Explore the reproductive rate of the virus.
+
+* Look at how the pandemic impacted the growth rates of economies around the world.
 
 <br>
 
 ## Data
 
-For our data analysis, we are utilizing data provided by Oxford titled Oxford Covid Government Response Variables. We will also be utilizing data provided by Bloomberg, for which they have created resiliency scores for the 53 top economies in the world. 
+For our data analysis, we are utilizing two large datasets. The first is provided by Oxford titled Oxford COVID Government Response Variables. The second dataset is provided by Bloomberg, for which they have created resiliency scores for the 53 top economies in the world.
+
+On top of these two main datasets, we will also be utilizing GDP growth rate data as well as Google COVID-19 Community Mobility Report to aid in our regression and analysis process.
 
 ```{r, echo=FALSE, collapse=TRUE, warning=FALSE, message=FALSE}
 library(readxl)
@@ -45,7 +48,7 @@ library(rstatix)
 
 <br>
 
-## Oxford's Data
+### Oxford's Data
 ```{r, collapse=TRUE, warning=FALSE, message=FALSE}
 #Path name for the dataset
 oxford <- "https://raw.githubusercontent.com/OxCGRT/covid-policy-tracker/master/data/OxCGRT_latest.csv"
@@ -59,7 +62,7 @@ rmarkdown::paged_table(oxford)
 
 <br>
 
-## Bloomberg's Data
+### Bloomberg's Data
 ```{r, collapse=TRUE, warning=FALSE, message=FALSE}
 
 #Path name for the dataset
@@ -79,7 +82,7 @@ rmarkdown::paged_table(country_info)
 
 ## Modeling
 
-We plan to build multiple linear regression models and one unsupervised learning method utilizing clustoring. 
+We plan to build multiple linear regression models and one unsupervised learning method utilizing clustering. 
 
 The first regression model's dependent variable will be COVID-19 deaths per capita.
 
@@ -87,17 +90,19 @@ The second regression model's dependent variable is the reproductive rate.
 
 The third regression involves the economic impact and our dependent variable will be changes in quarterly GDP.
 
-
-For all linear regression models, we are in the process of finding proper explanatory variables.
-
+The unsupervised learning method will be performed on the Bloomberg dataset to find countries who are similar to each other in their government response to the pandemic.
 
 <br>
 
 ## Visualizations
 
-We are going to make visualizations using ggplot, plotly, and others to increase the readability of our findings. It is important to become educated on the factors that affect covid deaths in the event another global pandemic becomes present.We hope to display trends that may not be apparently obvious in the hopes that this will aid in the current pandemic and future health problems to come.
+We are going to make visualizations using ggplot, plotly, and others to increase the readability of our findings. It is important to become educated on the factors that affect covid deaths in the event another global pandemic becomes present. We hope to display trends that may not be apparently obvious in the hopes that this will aid in the current pandemic and future health problems to come.
 
-# Summary Statistics
+<br>
+<br>
+<br>
+
+# Oxford
 ```{r, echo=FALSE, collapse=TRUE, warning=FALSE, message=FALSE}
 library(readxl)
 library(tidyverse)
@@ -109,16 +114,102 @@ library(rstatix)
 
 <br>
 
+## Overview
+Oxford’s goal is to track COVID-19 policy data consistently and use it to compare policy responses to COVID-19.
 
-### Oxford's Summary Statistics
+They collect data on 180 different countries and 23 different indicators.
+
+The data collection began on January 1st, 2020 which marks the very early stages of the global pandemic.
+
+
+
+## Indicators Utilized
+There are 21 live indicators that are imputed into the dataset daily.
+
+**Containment and Closure Policies**: Marked as C1-C8 on the dataset.
+
+**Economic Policies**: E1-E4
+
+**Health System Policies**: H1-H8
+
+**Vaccine Policies**: V1-V4
+
+
+## Data Types
+
+There are five kinds of data utilized in the dataset.
+
+**Ordinal**: On a simple scale of severity.
+
+**Numeric**: Specific number typically in U.S. dollars.
+
+**Text**: An open ended free response.
+
+**Categorical**: Range of eligible options to select and occasionally rank.
+
+**Binary**: Present (1) or absent (0).
+
+<br>
+
+## Policy Indices 
+
+**Overall Government Response Index**: 
+  Calculated using ordinal indicators
+  
+**Containment and Health Index**: 
+  Combines lockdown restrictions and closure measures with health variables such as testing policy, contact tracing, and others. 
+  Calculated using all ordinal containment and closure policy indicators and health system policy indicators.
+  
+**Stringency Index**: 
+  Measures the strictness of lockdown style. 
+  Calculated using all ordinal containment and closure policy indicators, plus an indicator recording public information campaigns.
+
+**Economic Support Index**: 
+  Measures income support and debt relief. 
+  Calculated using all ordinal economic policy indicators
+  
+**Risk of Openness Index**:
+  Based on the recommendations set out by the World Health Organization of measures that should be put in place before COVID-19 response policies can be safely relaxed.
+
+<br>
+
+## Calculation of Policy Indices
+
+
+Policy indices are averages of the individual component indicators.
+
+$\textit{index} = \dfrac{1}{k}\sum_{j=1}^{k} I_{j}$
+
+Where $k$ is the number of component indicators in an index and $I_{j}$ is the sub-index score for an individual indicator.
+  
+<br>
+
+## Relation between National and Sub-National Data 
+So far, Oxford has incorporated data for Brazilian states, Canadian provinces and territories, Chinese provinces, UK developed nations, and U.S. States.
+
+3 main usage for the OxCGRT data:
+
+  1. Describe all government responses relevant to a certain country
+  
+  2. Describe policies put in place by a given level and lower levels of government
+  
+  3. Compare government responses across different levels of government
+
+<br>
+
+## Summary Statistics
 ```{r, collapse=TRUE, warning=FALSE, message=FALSE}
 rstatix::get_summary_stats(oxford, type = "robust")
 ```
 <br>
+<br>
+<br>
 
+# Bloomberg
 
+<br>
 
-### Bloomberg's Summary Statistics
+## Bloomberg's Summary Statistics
 ```{r, collapse=TRUE, warning=FALSE, message=FALSE}
 rstatix::get_summary_stats(country_info, type = "robust")
 ```

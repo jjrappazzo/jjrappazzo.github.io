@@ -439,22 +439,28 @@ div.tocify {
 <h4 class="author">Jason Rappazzo</h4>
 <h4 class="author">James Jordon</h4>
 <h4 class="author"><br></h4>
-<h4 class="date">April 14, 2022<br><br></h4>
+<h4 class="date">April 14, 2022<br><br><br></h4>
 
 </div>
 
 
 <div id="project-overview" class="section level1" number="1">
 <h1><span class="header-section-number">1</span> Project Overview</h1>
-<p>For our project we have chosen to analyze government COVID-19 related data. As we all know, COVID-19 has impacted just about everyone around the world. Over the past two years, COVID-19 has filled hospitals worldwide and taken countless lives in the process. We want to look at the data to: <br> - Find trends in government responses. <br> - Discover factors that contribute to COVID-19 deaths. <br> - Explore the reproductive rate of COVID-19. <br> - Look at how the pandemic impacted the growth rates of economies around the world.</p>
+<p>For our project we have chosen to analyze government COVID-19 related data. As we all know, COVID-19 has impacted just about everyone around the world. Over the past two years, COVID-19 has filled hospitals worldwide and taken countless lives in the process. We want to look at the data to:</p>
+<ul>
+<li><p>Find trends in government responses in response to the pandemic.</p></li>
+<li><p>Discover factors that contribute to COVID-19 deaths.</p></li>
+<li><p>Explore the reproductive rate of the virus.</p></li>
+<li><p>Look at how the pandemic impacted the growth rates of economies around the world.</p></li>
+</ul>
 <p><br></p>
 <div id="data" class="section level2" number="1.1">
 <h2><span class="header-section-number">1.1</span> Data</h2>
-<p>For our data analysis, we are utilizing data provided by Oxford titled Oxford Covid Government Response Variables. We will also be utilizing data provided by Bloomberg, for which they have created resiliency scores for the 53 top economies in the world.</p>
+<p>For our data analysis, we are utilizing two large datasets. The first is provided by Oxford titled Oxford COVID Government Response Variables. The second dataset is provided by Bloomberg, for which they have created resiliency scores for the 53 top economies in the world.</p>
+<p>On top of these two main datasets, we will also be utilizing GDP growth rate data as well as Google COVID-19 Community Mobility Report to aid in our regression and analysis process.</p>
 <p><br></p>
-</div>
-<div id="oxfords-data" class="section level2" number="1.2">
-<h2><span class="header-section-number">1.2</span> Oxford’s Data</h2>
+<div id="oxfords-data" class="section level3" number="1.1.1">
+<h3><span class="header-section-number">1.1.1</span> Oxford’s Data</h3>
 <div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co">#Path name for the dataset</span></span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>oxford <span class="ot">&lt;-</span> <span class="st">&quot;https://raw.githubusercontent.com/OxCGRT/covid-policy-tracker/master/data/OxCGRT_latest.csv&quot;</span></span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -470,8 +476,8 @@ div.tocify {
 </div>
 <p><br></p>
 </div>
-<div id="bloombergs-data" class="section level2" number="1.3">
-<h2><span class="header-section-number">1.3</span> Bloomberg’s Data</h2>
+<div id="bloombergs-data" class="section level3" number="1.1.2">
+<h3><span class="header-section-number">1.1.2</span> Bloomberg’s Data</h3>
 <div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="co">#Path name for the dataset</span></span>
 <span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>country_info <span class="ot">&lt;-</span> <span class="st">&quot;https://covid.ourworldindata.org/data/owid-covid-data.csv&quot;</span></span>
@@ -491,35 +497,92 @@ div.tocify {
 </div>
 <p><br></p>
 </div>
-<div id="modeling" class="section level2" number="1.4">
-<h2><span class="header-section-number">1.4</span> Modeling</h2>
-<p>We plan to build multiple linear regression models and one unsupervised learning method utilizing clustoring.</p>
+</div>
+<div id="modeling" class="section level2" number="1.2">
+<h2><span class="header-section-number">1.2</span> Modeling</h2>
+<p>We plan to build multiple linear regression models and one unsupervised learning method utilizing clustering.</p>
 <p>The first regression model’s dependent variable will be COVID-19 deaths per capita.</p>
 <p>The second regression model’s dependent variable is the reproductive rate.</p>
 <p>The third regression involves the economic impact and our dependent variable will be changes in quarterly GDP.</p>
-<p>For all linear regression models, we are in the process of finding proper explanatory variables.</p>
+<p>The unsupervised learning method will be performed on the Bloomberg dataset to find countries who are similar to each other in their government response to the pandemic.</p>
 <p><br></p>
 </div>
-<div id="visualizations" class="section level2" number="1.5">
-<h2><span class="header-section-number">1.5</span> Visualizations</h2>
-<p>We are going to make visualizations using ggplot, plotly, and others to increase the readability of our findings. It is important to become educated on the factors that affect covid deaths in the event another global pandemic becomes present.We hope to display trends that may not be apparently obvious in the hopes that this will aid in the current pandemic and future health problems to come.</p>
+<div id="visualizations" class="section level2" number="1.3">
+<h2><span class="header-section-number">1.3</span> Visualizations</h2>
+<p>We are going to make visualizations using ggplot, plotly, and others to increase the readability of our findings. It is important to become educated on the factors that affect covid deaths in the event another global pandemic becomes present. We hope to display trends that may not be apparently obvious in the hopes that this will aid in the current pandemic and future health problems to come.</p>
+<p><br> <br> <br></p>
 </div>
 </div>
-<div id="summary-statistics" class="section level1" number="2">
-<h1><span class="header-section-number">2</span> Summary Statistics</h1>
+<div id="oxford" class="section level1" number="2">
+<h1><span class="header-section-number">2</span> Oxford</h1>
 <p><br></p>
-<div id="oxfords-summary-statistics" class="section level3" number="2.0.1">
-<h3><span class="header-section-number">2.0.1</span> Oxford’s Summary Statistics</h3>
+<div id="overview" class="section level2" number="2.1">
+<h2><span class="header-section-number">2.1</span> Overview</h2>
+<p>Oxford’s goal is to track COVID-19 policy data consistently and use it to compare policy responses to COVID-19.</p>
+<p>They collect data on 180 different countries and 23 different indicators.</p>
+<p>The data collection began on January 1st, 2020 which marks the very early stages of the global pandemic.</p>
+</div>
+<div id="indicators-utilized" class="section level2" number="2.2">
+<h2><span class="header-section-number">2.2</span> Indicators Utilized</h2>
+<p>There are 21 live indicators that are imputed into the dataset daily.</p>
+<p><strong>Containment and Closure Policies</strong>: Marked as C1-C8 on the dataset.</p>
+<p><strong>Economic Policies</strong>: E1-E4</p>
+<p><strong>Health System Policies</strong>: H1-H8</p>
+<p><strong>Vaccine Policies</strong>: V1-V4</p>
+</div>
+<div id="data-types" class="section level2" number="2.3">
+<h2><span class="header-section-number">2.3</span> Data Types</h2>
+<p>There are five kinds of data utilized in the dataset.</p>
+<p><strong>Ordinal</strong>: On a simple scale of severity.</p>
+<p><strong>Numeric</strong>: Specific number typically in U.S. dollars.</p>
+<p><strong>Text</strong>: An open ended free response.</p>
+<p><strong>Categorical</strong>: Range of eligible options to select and occasionally rank.</p>
+<p><strong>Binary</strong>: Present (1) or absent (0).</p>
+<p><br></p>
+</div>
+<div id="policy-indices" class="section level2" number="2.4">
+<h2><span class="header-section-number">2.4</span> Policy Indices</h2>
+<p><strong>Overall Government Response Index</strong>: Calculated using ordinal indicators</p>
+<p><strong>Containment and Health Index</strong>: Combines lockdown restrictions and closure measures with health variables such as testing policy, contact tracing, and others. Calculated using all ordinal containment and closure policy indicators and health system policy indicators.</p>
+<p><strong>Stringency Index</strong>: Measures the strictness of lockdown style. Calculated using all ordinal containment and closure policy indicators, plus an indicator recording public information campaigns.</p>
+<p><strong>Economic Support Index</strong>: Measures income support and debt relief. Calculated using all ordinal economic policy indicators</p>
+<p><strong>Risk of Openness Index</strong>: Based on the recommendations set out by the World Health Organization of measures that should be put in place before COVID-19 response policies can be safely relaxed.</p>
+<p><br></p>
+</div>
+<div id="calculation-of-policy-indices" class="section level2" number="2.5">
+<h2><span class="header-section-number">2.5</span> Calculation of Policy Indices</h2>
+<p>Policy indices are averages of the individual component indicators.</p>
+<p><span class="math inline">\(\textit{index} = \dfrac{1}{k}\sum_{j=1}^{k} I_{j}\)</span></p>
+<p>Where <span class="math inline">\(k\)</span> is the number of component indicators in an index and <span class="math inline">\(I_{j}\)</span> is the sub-index score for an individual indicator.</p>
+<p><br></p>
+</div>
+<div id="relation-between-national-and-sub-national-data" class="section level2" number="2.6">
+<h2><span class="header-section-number">2.6</span> Relation between National and Sub-National Data</h2>
+<p>So far, Oxford has incorporated data for Brazilian states, Canadian provinces and territories, Chinese provinces, UK developed nations, and U.S. States.</p>
+<p>3 main usage for the OxCGRT data:</p>
+<ol style="list-style-type: decimal">
+<li><p>Describe all government responses relevant to a certain country</p></li>
+<li><p>Describe policies put in place by a given level and lower levels of government</p></li>
+<li><p>Compare government responses across different levels of government</p></li>
+</ol>
+<p><br></p>
+</div>
+<div id="summary-statistics" class="section level2" number="2.7">
+<h2><span class="header-section-number">2.7</span> Summary Statistics</h2>
 <div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>rstatix<span class="sc">::</span><span class="fu">get_summary_stats</span>(oxford, <span class="at">type =</span> <span class="st">&quot;robust&quot;</span>)</span></code></pre></div>
 <div data-pagedtable="false">
 <script data-pagedtable-source type="application/json">
-{"columns":[{"label":["variable"],"name":[1],"type":["chr"],"align":["left"]},{"label":["n"],"name":[2],"type":["dbl"],"align":["right"]},{"label":["median"],"name":[3],"type":["dbl"],"align":["right"]},{"label":["iqr"],"name":[4],"type":["dbl"],"align":["right"]}],"data":[{"1":"C1_Flag","2":"221266","3":"1.00","4":"0.00"},{"1":"C1_School closing","2":"273104","3":"1.00","4":"2.00"},{"1":"C2_Flag","2":"212075","3":"1.00","4":"0.00"},{"1":"C2_Workplace closing","2":"272987","3":"1.00","4":"1.00"},{"1":"C3_Cancel public events","2":"272826","3":"1.00","4":"1.00"},{"1":"C3_Flag","2":"222347","3":"1.00","4":"0.00"},{"1":"C4_Flag","2":"200894","3":"1.00","4":"0.00"},{"1":"C4_Restrictions on gatherings","2":"272736","3":"3.00","4":"4.00"},{"1":"C5_Close public transport","2":"272553","3":"0.00","4":"1.00"},{"1":"C5_Flag","2":"114391","3":"1.00","4":"1.00"},{"1":"C6_Flag","2":"160538","3":"1.00","4":"1.00"},{"1":"C6_Stay at home requirements","2":"272789","3":"1.00","4":"2.00"},{"1":"C7_Flag","2":"166391","3":"1.00","4":"1.00"},{"1":"C7_Restrictions on internal movement","2":"272781","3":"1.00","4":"2.00"},{"1":"C8_International travel controls","2":"271883","3":"3.00","4":"1.00"},{"1":"ConfirmedCases","2":"272578","3":"45500.00","4":"356662.25"},{"1":"ConfirmedDeaths","2":"272490","3":"771.00","4":"6392.00"},{"1":"ContainmentHealthIndex","2":"272104","3":"57.02","4":"20.18"},{"1":"ContainmentHealthIndexForDisplay","2":"273031","3":"56.90","4":"20.24"},{"1":"Date","2":"284133","3":"20210319.00","4":"10190.00"},{"1":"E1_Flag","2":"153333","3":"0.00","4":"1.00"},{"1":"E1_Income support","2":"259482","3":"1.00","4":"1.00"},{"1":"E2_Debt/contract relief","2":"259343","3":"1.00","4":"2.00"},{"1":"E3_Fiscal measures","2":"146749","3":"0.00","4":"0.00"},{"1":"E4_International support","2":"146645","3":"0.00","4":"0.00"},{"1":"EconomicSupportIndex","2":"259219","3":"37.50","4":"62.50"},{"1":"EconomicSupportIndexForDisplay","2":"260146","3":"37.50","4":"62.50"},{"1":"GovernmentResponseIndex","2":"270451","3":"54.69","4":"19.58"},{"1":"GovernmentResponseIndexForDisplay","2":"271378","3":"54.69","4":"19.79"},{"1":"H1_Flag","2":"259490","3":"1.00","4":"0.00"},{"1":"H1_Public information campaigns","2":"272794","3":"2.00","4":"0.00"},{"1":"H2_Testing policy","2":"271711","3":"2.00","4":"1.00"},{"1":"H3_Contact tracing","2":"270125","3":"2.00","4":"1.00"},{"1":"H4_Emergency investment in healthcare","2":"151099","3":"0.00","4":"0.00"},{"1":"H5_Investment in vaccines","2":"211043","3":"0.00","4":"0.00"},{"1":"H6_Facial Coverings","2":"272556","3":"3.00","4":"1.00"},{"1":"H6_Flag","2":"234360","3":"1.00","4":"0.00"},{"1":"H7_Flag","2":"142369","3":"1.00","4":"0.00"},{"1":"H7_Vaccination policy","2":"272402","3":"2.00","4":"5.00"},{"1":"H8_Flag","2":"193406","3":"1.00","4":"0.00"},{"1":"H8_Protection of elderly people","2":"262086","3":"2.00","4":"2.00"},{"1":"StringencyIndex","2":"272385","3":"52.78","4":"29.63"},{"1":"StringencyIndexForDisplay","2":"273312","3":"52.78","4":"29.63"},{"1":"StringencyLegacyIndex","2":"272483","3":"63.10","4":"26.19"},{"1":"StringencyLegacyIndexForDisplay","2":"273409","3":"63.10","4":"26.19"},{"1":"V1_Vaccine Prioritisation (summary)","2":"192195","3":"1.00","4":"2.00"},{"1":"V2A_Vaccine Availability (summary)","2":"191688","3":"1.00","4":"2.00"},{"1":"V2D_Medically/ clinically vulnerable (Non-elderly)","2":"103712","3":"2.00","4":"1.00"},{"1":"V2E_Education","2":"103712","3":"2.00","4":"1.00"},{"1":"V2F_Frontline workers  (non healthcare)","2":"103712","3":"2.00","4":"0.00"},{"1":"V2G_Frontline workers  (healthcare)","2":"103712","3":"2.00","4":"0.00"},{"1":"V3_Vaccine Financial Support (summary)","2":"191688","3":"4.00","4":"5.00"},{"1":"V4_Mandatory Vaccination (summary)","2":"47254","3":"0.00","4":"1.00"}],"options":{"columns":{"min":{},"max":[10]},"rows":{"min":[10],"max":[10]},"pages":{}}}
+{"columns":[{"label":["variable"],"name":[1],"type":["chr"],"align":["left"]},{"label":["n"],"name":[2],"type":["dbl"],"align":["right"]},{"label":["median"],"name":[3],"type":["dbl"],"align":["right"]},{"label":["iqr"],"name":[4],"type":["dbl"],"align":["right"]}],"data":[{"1":"C1_Flag","2":"221267","3":"1.00","4":"0.00"},{"1":"C1_School closing","2":"273115","3":"1.00","4":"2.00"},{"1":"C2_Flag","2":"212083","3":"1.00","4":"0.00"},{"1":"C2_Workplace closing","2":"272998","3":"1.00","4":"1.00"},{"1":"C3_Cancel public events","2":"272837","3":"1.00","4":"1.00"},{"1":"C3_Flag","2":"222355","3":"1.00","4":"0.00"},{"1":"C4_Flag","2":"200894","3":"1.00","4":"0.00"},{"1":"C4_Restrictions on gatherings","2":"272747","3":"3.00","4":"4.00"},{"1":"C5_Close public transport","2":"272564","3":"0.00","4":"1.00"},{"1":"C5_Flag","2":"114392","3":"1.00","4":"1.00"},{"1":"C6_Flag","2":"160538","3":"1.00","4":"1.00"},{"1":"C6_Stay at home requirements","2":"272800","3":"1.00","4":"2.00"},{"1":"C7_Flag","2":"166394","3":"1.00","4":"1.00"},{"1":"C7_Restrictions on internal movement","2":"272792","3":"1.00","4":"2.00"},{"1":"C8_International travel controls","2":"271894","3":"3.00","4":"1.00"},{"1":"ConfirmedCases","2":"272578","3":"45500.00","4":"356662.25"},{"1":"ConfirmedDeaths","2":"272490","3":"771.00","4":"6392.00"},{"1":"ContainmentHealthIndex","2":"272112","3":"57.02","4":"20.18"},{"1":"ContainmentHealthIndexForDisplay","2":"273032","3":"56.90","4":"20.24"},{"1":"Date","2":"284133","3":"20210319.00","4":"10190.00"},{"1":"E1_Flag","2":"153341","3":"0.00","4":"1.00"},{"1":"E1_Income support","2":"259490","3":"1.00","4":"1.00"},{"1":"E2_Debt/contract relief","2":"259351","3":"1.00","4":"2.00"},{"1":"E3_Fiscal measures","2":"146749","3":"0.00","4":"0.00"},{"1":"E4_International support","2":"146645","3":"0.00","4":"0.00"},{"1":"EconomicSupportIndex","2":"259227","3":"37.50","4":"62.50"},{"1":"EconomicSupportIndexForDisplay","2":"260147","3":"37.50","4":"62.50"},{"1":"GovernmentResponseIndex","2":"270459","3":"54.69","4":"19.58"},{"1":"GovernmentResponseIndexForDisplay","2":"271379","3":"54.69","4":"19.79"},{"1":"H1_Flag","2":"259498","3":"1.00","4":"0.00"},{"1":"H1_Public information campaigns","2":"272802","3":"2.00","4":"0.00"},{"1":"H2_Testing policy","2":"271719","3":"2.00","4":"1.00"},{"1":"H3_Contact tracing","2":"270133","3":"2.00","4":"1.00"},{"1":"H4_Emergency investment in healthcare","2":"151099","3":"0.00","4":"0.00"},{"1":"H5_Investment in vaccines","2":"211043","3":"0.00","4":"0.00"},{"1":"H6_Facial Coverings","2":"272564","3":"3.00","4":"1.00"},{"1":"H6_Flag","2":"234368","3":"1.00","4":"0.00"},{"1":"H7_Flag","2":"142377","3":"1.00","4":"0.00"},{"1":"H7_Vaccination policy","2":"272410","3":"2.00","4":"5.00"},{"1":"H8_Flag","2":"193414","3":"1.00","4":"0.00"},{"1":"H8_Protection of elderly people","2":"262094","3":"2.00","4":"2.00"},{"1":"StringencyIndex","2":"272396","3":"52.78","4":"29.63"},{"1":"StringencyIndexForDisplay","2":"273316","3":"52.78","4":"29.63"},{"1":"StringencyLegacyIndex","2":"272494","3":"63.10","4":"26.19"},{"1":"StringencyLegacyIndexForDisplay","2":"273413","3":"63.10","4":"26.19"},{"1":"V1_Vaccine Prioritisation (summary)","2":"192203","3":"1.00","4":"2.00"},{"1":"V2A_Vaccine Availability (summary)","2":"191696","3":"1.00","4":"2.00"},{"1":"V2D_Medically/ clinically vulnerable (Non-elderly)","2":"103720","3":"2.00","4":"1.00"},{"1":"V2E_Education","2":"103720","3":"2.00","4":"1.00"},{"1":"V2F_Frontline workers  (non healthcare)","2":"103720","3":"2.00","4":"0.00"},{"1":"V2G_Frontline workers  (healthcare)","2":"103720","3":"2.00","4":"0.00"},{"1":"V3_Vaccine Financial Support (summary)","2":"191696","3":"4.00","4":"5.00"},{"1":"V4_Mandatory Vaccination (summary)","2":"47262","3":"0.00","4":"1.00"}],"options":{"columns":{"min":{},"max":[10]},"rows":{"min":[10],"max":[10]},"pages":{}}}
   </script>
 </div>
-<p><br></p>
+<p><br> <br> <br></p>
 </div>
-<div id="bloombergs-summary-statistics" class="section level3" number="2.0.2">
-<h3><span class="header-section-number">2.0.2</span> Bloomberg’s Summary Statistics</h3>
+</div>
+<div id="bloomberg" class="section level1" number="3">
+<h1><span class="header-section-number">3</span> Bloomberg</h1>
+<p><br></p>
+<div id="bloombergs-summary-statistics" class="section level2" number="3.1">
+<h2><span class="header-section-number">3.1</span> Bloomberg’s Summary Statistics</h2>
 <div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>rstatix<span class="sc">::</span><span class="fu">get_summary_stats</span>(country_info, <span class="at">type =</span> <span class="st">&quot;robust&quot;</span>)</span></code></pre></div>
 <div data-pagedtable="false">
 <script data-pagedtable-source type="application/json">
