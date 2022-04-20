@@ -54,6 +54,7 @@ We are going to make visualizations using ggplot, plotly, and others to increase
 library(readxl)
 library(tidyverse)
 library(skimr)
+library(rstatix)
 
 ```
 
@@ -72,13 +73,12 @@ rmarkdown::paged_table(oxford)
 ```
 <br>
 
+
 ### Summary Statistics For Oxford Data
 ```{r, collapse=TRUE, warning=FALSE, message=FALSE}
-sum_oxford <- skim(oxford)
-skim(oxford)
+rstatix::get_summary_stats(oxford, type = "robust")
 ```
 <br>
-
 
 ## Country Information Data
 ```{r, collapse=TRUE, warning=FALSE, message=FALSE}
@@ -99,7 +99,6 @@ rmarkdown::paged_table(country_info)
 
 ### Country Information Summary Statistics
 ```{r, collapse=TRUE, warning=FALSE, message=FALSE}
-sum_countries <- skim(country_info)
-skim(country_info)
+rstatix::get_summary_stats(country_info, type = "robust")
 ```
 
