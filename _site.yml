@@ -11,6 +11,8 @@ navbar:
       href: resume.html
     - text: "Project"
       href: project.html
+    - text: "Project Slides"
+      href: suny_geneseo_bac/suny_geneseo_bac2022.html
 output:
   html_document:
     theme: readable
