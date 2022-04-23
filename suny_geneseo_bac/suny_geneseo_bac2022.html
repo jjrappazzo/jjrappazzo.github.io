@@ -97,7 +97,7 @@ class: inverse, center, middle
 
 
 &lt;div class="figure" style="text-align: center"&gt;
-&lt;img src="bloomberg_var1.png" alt="Building the Covid Resilience Ranking" width="70%" /&gt;
+&lt;img src="tab_bloomberg_var1.png" alt="Building the Covid Resilience Ranking" width="100%" /&gt;
 &lt;p class="caption"&gt;Building the Covid Resilience Ranking&lt;/p&gt;
 &lt;/div&gt;
 
@@ -106,7 +106,7 @@ class: inverse, center, middle
 
 
 &lt;div class="figure" style="text-align: center"&gt;
-&lt;img src="bloomberg_var2.png" alt="Building the Covid Resilience Ranking" width="70%" /&gt;
+&lt;img src="tab_bloomberg_var2.png" alt="Building the Covid Resilience Ranking" width="100%" /&gt;
 &lt;p class="caption"&gt;Building the Covid Resilience Ranking&lt;/p&gt;
 &lt;/div&gt;
 
@@ -117,7 +117,7 @@ class: inverse, center, middle
 
 
 &lt;div class="figure" style="text-align: center"&gt;
-&lt;img src="bloomberg_var3.png" alt="Building the Covid Resilience Ranking" width="70%" /&gt;
+&lt;img src="tab_bloomberg_var3.png" alt="Building the Covid Resilience Ranking" width="100%" /&gt;
 &lt;p class="caption"&gt;Building the Covid Resilience Ranking&lt;/p&gt;
 &lt;/div&gt;
 
@@ -130,8 +130,8 @@ class: inverse, center, middle
     - Used to convert metrics expressed in different scales into a common one
 
 - All indicators are scored 0-100
-  - 100 (blue) indicates best performance
-  - 0 (orange) indicates worst
+  - 100 indicates best performance
+  - 0 indicates worst
   - The final score is determined by averaging country’s performance across 12 indicators with equal weight.
 
 &lt;!-- --- --&gt;
@@ -253,7 +253,7 @@ class: inverse, center, middle
 # Clustering and PC Analysis on Bloomberg Indices
 
 
-&lt;img src="clustering_pc.png" width="87.5%" style="display: block; margin: auto;" /&gt;
+&lt;img src="clustering_pc.png" width="91%" style="display: block; margin: auto;" /&gt;
 
 
 ---
@@ -326,7 +326,7 @@ class: inverse, center, middle
 # Calculation of Policy Indices
 - Policy indices are averages of the individual component indicators.
 
-`\(\textit{index} = \dfrac{1}{k}\sum_{j=1}^{k} I_{j}\)`
+`\(\hspace{3cm}\textit{index} = \dfrac{1}{k}\sum_{j=1}^{k} I_{j}\)`
 
   - `\(k\)`: the number of component indicators in an index; 
   - `\(I_{j}\)`: the sub-index score for an individual indicator.
@@ -426,20 +426,20 @@ class: inverse, center, middle
 
 # The Effect of COVID-19 Policies on the Reproduction Rate
 
-&lt;img src="tab_rep1.png" width="95%" style="display: block; margin: auto;" /&gt;
+&lt;img src="tab_rep1.png" width="77%" style="display: block; margin: auto;" /&gt;
 
 
 ---
 
 # The Effect of COVID-19 Policies on the Reproduction Rate
 
-&lt;img src="tab_rep2.png" width="95%" style="display: block; margin: auto;" /&gt;
+&lt;img src="tab_rep2.png" width="77%" style="display: block; margin: auto;" /&gt;
 
 
 ---
 # The Effect of COVID-19 Policies on the Reproduction Rate
 
-&lt;img src="fig_rep_beta.png" width="50%" style="display: block; margin: auto;" /&gt;
+&lt;img src="fig_rep_beta.png" width="62.5%" style="display: block; margin: auto;" /&gt;
 
 ---
 # The Effect of COVID-19 Policies on the Death per capita
@@ -476,7 +476,7 @@ class: inverse, center, middle
 ---
 # The Effect of COVID-19 Policies on the Death per capita
 
-&lt;img src="fig_death_beta.png" width="50%" style="display: block; margin: auto;" /&gt;
+&lt;img src="fig_death_beta.png" width="62.5%" style="display: block; margin: auto;" /&gt;
 
 
 
@@ -490,6 +490,12 @@ class: inverse, center, middle
 
 
 
+# Growth Rate of GDP per Worker
+
+&lt;img src="trend_imf.png" width="90%" style="display: block; margin: auto;" /&gt;
+
+
+---
 # The Effect of COVID-19 on the Economic Growth
 
 &lt;img src="table_imf.png" width="80%" style="display: block; margin: auto;" /&gt;
@@ -498,17 +504,10 @@ class: inverse, center, middle
 ---
 # The Effect of COVID-19 on the Economic Growth
 
-&lt;img src="table_imf.png" width="80%" style="display: block; margin: auto;" /&gt;
+&lt;img src="fig_beta_imf.png" width="62.5%" style="display: block; margin: auto;" /&gt;
 
 
 ---
-# The Effect of COVID-19 on the Economic Growth
-
-&lt;img src="fig_beta_imf.png" width="80%" style="display: block; margin: auto;" /&gt;
-
-
----
-
 
 # Conclusion
 
@@ -520,62 +519,27 @@ class: inverse, center, middle
 
 
 
+---
+# References
 
-&lt;!-- ## What have we learned about facing the effects of a pandemic, globally? (1 of 2) --&gt;
+- Chang, Rachel, and Felix Tam. “Methodology: Inside Bloomberg's Covid Resilience Ranking.” Bloomberg.com, 24 November 2020, https://www.bloomberg.com/news/articles/2020-11-24/inside-bloomberg-s-covid-resilience-ranking. Accessed 19 April 2022.
 
-&lt;!--  - We have learned that we need to look at specific countries to find the effectiveness of COVID-19 policies. --&gt;
+- Francisco Arroyo-Marioli,  Francisco Bullano,  Simas Kucinskas,  Carlos Rondón-Moreno. (2021). "Tracking R of COVID-19: A new real-time estimation using the Kalman filter," PLOS One. https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0244474#pone.0244474.ref024
 
-&lt;!--  - Countries have different responsiveness to their government interventions which is why country is an explanatory variable in our daily death per capita regression --&gt;
+- Google. (2022). "Community Mobility Report." https://www.google.com/covid19/mobility/
 
-&lt;!--  - Misplaced concerns about the risk of the vaccine relative to getting COVID-19, over-confidence in their own natural immunity, and adherence to the range of theories that lack scientific evidence could be why we do not see a large magnitude of impact on COVID-19 deaths by our explanatory variables. --&gt;
-
-&lt;!-- --- --&gt;
-&lt;!-- ## What have we learned about facing the effects of a pandemic, globally? (2 of 2) --&gt;
-
-&lt;!--  - As we can see from our Solow growth regression, labor growth and technology growth got hit the hardest. --&gt;
-
-&lt;!--  - Utilizing quarterly data is important due to the rapid changes that occur during the midst of the pandemic. --&gt;
-
-&lt;!--  - More specifically, service and entertainment sectors were impacted the most. --&gt;
-
-&lt;!-- --- --&gt;
-
-&lt;!-- ## Are we better prepared for the NEXT health crisis? --&gt;
-
-&lt;!--  - Countries have many goals, all of which requiring different strategies that may conflict with each other: --&gt;
-&lt;!--  - Community resilience to potential disasters  --&gt;
-&lt;!--  - Reliable critical economic and societal infrastructure --&gt;
-&lt;!--  - Long term strategic imperatives such as industrial transformation --&gt;
-&lt;!--  - There is evidence of facial coverings, targeted income support,  ___ ____ being statistically significant from 0 and negative meaning that it reduces the reproductive rate of COVID-19. --&gt;
-&lt;!--  - This information can be utilized and explored even further to aid in fighting the future viruses that may take the world by storm. --&gt;
-
-&lt;!-- --- --&gt;
-
-&lt;!-- ## Based on our analysis, what advice can we give our colleagues in other countries? --&gt;
-&lt;!--  - Governments are unable fill all gaps themselves; must look to utilize the  capabilities of other sectors --&gt;
-&lt;!-- Was shown by (Insert data here) --&gt;
-&lt;!--  - Look into creating a research and development ecosystem for Global resilience --&gt;
-&lt;!--    - This will increase trust in public information globally. Our data shows that Public Information actually led to an        increase in daily deaths around the world. This could be due to the fact that COVID-19 was such an unknown virus that      early public information about it could have been incorrect or misleading. This then led to widespread public             distrust of governments internationally. --&gt;
-&lt;!--  - Coordinate crisis management exercise involving both public and private sectors --&gt;
+- IMF eLibrary Data. (2022). https://data.imf.org/
 
 ---
-## References
-- World Economic Forum, “Global Risks Report 2022,” 11 Jan. 2022, https://www.weforum.org/reports/global-risks-report-2022/in-full/chapter-6-refreshing-resilience-from-covid-19-lessons-to-a-whole-of-society-response. 
+
+# References
 
 - Hale, Thomas, Jessica Anania, Noam Angrist, Thomas Boby, Emily Cameron-Blake, Martina Di Folco, Lucy Ellen, Rafael Goldszmidt, Laura Hallas, Beatriz Kira, Maria Luciano, Saptarshi Majumdar, Radhika Nagesh, Anna Petherick, Toby Phillips, Helen Tatlow, Samuel Webster, Andrew Wood, Yuxi Zhang, “Variation in Government Responses to COVID-19” Version 12.0. Blavatnik School of Government Working Paper. 11 June 2021. Available: www.bsg.ox.ac.uk/covidtracker
 
+
 - Thomas Hale, Noam Angrist, Rafael Goldszmidt, Beatriz Kira, Anna Petherick, Toby Phillips, Samuel Webster, Emily Cameron-Blake, Laura Hallas, Saptarshi Majumdar, and Helen Tatlow. (2021). “A global panel database of pandemic policies (Oxford COVID-19 Government Response Tracker).” Nature Human Behaviour. https://doi.org/10.1038/s41562-021-01079-8
 
-
----
-
-## References
-- Francisco Arroyo-Marioli,  Francisco Bullano,  Simas Kucinskas,  Carlos Rondón-Moreno. (2021). "Tracking R of COVID-19: A new real-time estimation using the Kalman filter," PLOS One. https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0244474#pone.0244474.ref024
-
-
-
-
----
+- World Economic Forum, “Global Risks Report 2022,” 11 Jan. 2022, https://www.weforum.org/reports/global-risks-report-2022/in-full/chapter-6-refreshing-resilience-from-covid-19-lessons-to-a-whole-of-society-response. 
 
 
 
