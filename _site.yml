@@ -14,7 +14,7 @@ navbar:
     - text: "Project Slides"
       href: suny_geneseo_bac/suny_geneseo_bac2022.html
     - text: "Final Round Slides"
-      href: suny_geneseo_bac2022/suny_geneseo_bac2022_v2.html
+      href: suny_geneseo_bac2022_v2/suny_geneseo_bac2022_v2.html
 output:
   html_document:
     theme: readable
