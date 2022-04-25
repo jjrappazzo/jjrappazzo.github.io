@@ -7,14 +7,17 @@ navbar:
       href: index.html
     - text: "About Me"
       href: about.html
-    - text: "Resume"
-      href: resume.html
     - text: "Project"
       href: project.html
     - text: "Project Slides"
       href: suny_geneseo_bac/suny_geneseo_bac2022.html
     - text: "Final Round Slides"
       href: suny_geneseo_bac2022_v2/suny_geneseo_bac2022_v2.html
+    - text: "Resume"
+      href: resume.html
+    - text: "DANL 310 Homework"
+      href: hw.html
+
 output:
   html_document:
     theme: readable
