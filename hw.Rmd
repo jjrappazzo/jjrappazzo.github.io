@@ -2,6 +2,11 @@
 title: "DANL 310 Homework"
 output: 
   html_document:
+    df_print: paged
+    toc: true
+    toc_depth: 2
+    toc_float: true
+    number_sections: true
     theme: united
     highlight: tango
 ---
