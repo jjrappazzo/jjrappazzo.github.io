@@ -1,21 +1,21 @@
 type,exclude,date,date_end,what,what_translation,institution,department,where,additional_info,additional_info2,url,slides,video,short_cv,order,academic,professional_2_page,website,one_column_paged,brief_no_pubs,humanities,humanities_description
 current_positions,NA,2022-01-25,present,Quantitative Methods Tutor,NA,NA,NA,"School of Business, SUNY Geneseo",NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
-education,NA,2019-08-25,present,B.A. in Economics,NA,NA,NA,SUNY Geneseo,NA,NA,NA,NA,NA,y,NA,NA,NA,NA,NA,NA,NA,NA
-awards,NA,2021-08-25,2021-12-15,President's List: Fall 2021,NA,NA,NA,SUNY Geneseo,NA,NA,NA,NA,NA,y,NA,NA,NA,NA,NA,NA,NA,NA
-awards,NA,2021-01-25,2021-05-25,President's List: Spring 2021,NA,NA,NA,SUNY Geneseo,NA,NA,NA,NA,NA,y,NA,NA,NA,NA,NA,NA,NA,NA
-awards,NA,2020-08-25,NA,Dean's List: Fall 2020,NA,NA,NA,SUNY Geneseo,NA,NA,NA,NA,NA,y,NA,NA,NA,NA,NA,NA,NA,NA
-awards,NA,2020-01-25,NA,Dean's List: Spring 2020,NA,NA,NA,SUNY Geneseo,NA,NA,NA,NA,NA,y,NA,NA,NA,NA,NA,NA,NA,NA
-awards,NA,2021-05-25,NA,USTFCCCA Individual All Academic Award,NA,NA,NA,,NA,NA,NA,NA,NA,y,NA,NA,NA,NA,NA,NA,NA,NA
-service,NA,2021-01-01,present,Student Athlete Advisory Committee (SAAC),NA,NA,NA,SUNY Geneseo,NA,NA,,NA,NA,y,NA,NA,NA,NA,NA,NA,NA,NA
-prof-act,NA,2022-04-01,NA,Business Analytics Competition Finalist: ,NA,NA,NA,"Clean data provided by Oxford and Bloomberg, create linear regression and principal component analysis models in R, and present our findings to a panel of professional judges.",NA,NA,NA,NA,NA,y,NA,NA,NA,NA,NA,NA,NA,NA
-prof-act,NA,2021-05-14,6/1/2017,Data Coordinator - Fed Challenge: ,NA,NA,NA,"Discuss the Federal Reserve and the economy as a whole, research motives behind fiscal and monetary changes in the United States, and update Excel file with current economic data that comes out every week/month/quarter.",NA,NA,NA,NA,NA,y,NA,NA,NA,NA,NA,NA,NA,NA
-position,NA,2021-05-17,present,Visiting researcher,NA,NA,NA,"Dept. of Computer Science, University of Copenhagen",NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
-work,NA,,,NA,,,,,,,,,,,,,,,,,,
-work,NA,2021-05-18,present,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,y,NA,NA,y,NA,NA
-technical,NA,2021-05-20,NA,Programming languages,NA,NA,NA,NA,(R and Python,NA,NA,NA,NA,y,NA,NA,NA,NA,NA,NA,NA,NA
-technical,NA,2021-05-21,NA,Web development,NA,NA,NA,NA,"(Rmarkdown, HTML, GitHub Pages)",NA,NA,NA,NA,y,NA,NA,NA,NA,NA,NA,NA,NA
-volunteering,NA,2021-05-22,2/1/2019,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,2,NA,y,NA,NA,NA,NA,NA
-volunteering,NA,2021-05-23,present,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,1,n,y,NA,NA,NA,NA,NA
-volunteering,NA,2021-05-24,6/1/2016,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,3,n,y,NA,NA,NA,NA,NA
-volunteering,NA,2021-05-25,2/1/2019,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,4,n,NA,NA,NA,NA,NA,NA
-volunteering,NA,2021-05-26,4/30/2017,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,5,n,NA,NA,NA,NA,NA,NA
+education,NA,2022-01-26,present,"B.A. in Economics, Minor in Data Analytics",NA,NA,NA,SUNY Geneseo,NA,NA,NA,NA,NA,y,NA,NA,NA,NA,NA,NA,NA,NA
+awards,NA,2021-01-27,2021-12-15,President's List: Fall 2021,NA,NA,NA,SUNY Geneseo,NA,NA,NA,NA,NA,y,NA,NA,NA,NA,NA,NA,NA,NA
+awards,NA,2021-01-28,2021-05-25,President's List: Spring 2021,NA,NA,NA,SUNY Geneseo,NA,NA,NA,NA,NA,y,NA,NA,NA,NA,NA,NA,NA,NA
+awards,NA,2020-01-29,NA,Dean's List: Fall 2020,NA,NA,NA,SUNY Geneseo,NA,NA,NA,NA,NA,y,NA,NA,NA,NA,NA,NA,NA,NA
+awards,NA,2020-01-30,NA,Dean's List: Spring 2020,NA,NA,NA,SUNY Geneseo,NA,NA,NA,NA,NA,y,NA,NA,NA,NA,NA,NA,NA,NA
+awards,NA,2019-01-01,NA,5x SUNYAC Commissioner's Honnor Roll,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+awards,NA,2021-01-31,NA,USTFCCCA Individual All Academic Award,NA,NA,NA,,NA,NA,NA,NA,NA,y,NA,NA,NA,NA,NA,NA,NA,NA
+service,NA,2021-02-01,present,Student Athlete Advisory Committee (SAAC),NA,NA,NA,SUNY Geneseo,NA,NA,,NA,NA,y,NA,NA,NA,NA,NA,NA,NA,NA
+prof-act,NA,2022-02-02,NA,Business Analytics Competition Finalist:,NA,NA,NA,"Clean data provided by Oxford and Bloomberg, create linear regression and principal component analysis models in R, and present our findings to a panel of professional judges.",NA,NA,NA,NA,NA,y,NA,NA,NA,NA,NA,NA,NA,NA
+prof-act,NA,2021-09-03,2021-12-01,Data Coordinator - Fed Challenge:,NA,NA,NA,"Discuss the Federal Reserve and the economy as a whole, research motives behind fiscal and monetary changes in the United States, and update Excel file with current economic data that comes out every week/month/quarter.",NA,NA,NA,NA,NA,y,NA,NA,NA,NA,NA,NA,NA,NA
+position,NA,2022-02-04,present,Visiting researcher,NA,NA,NA,"Dept. of Computer Science, University of Copenhagen",NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+work,NA,2021-07-01,2021-08-01,Reseach Associate ,NA,NA,NA,Albany College of Pharmacy,,,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA
+work,NA,2019-04-06,2021-08-01,Laborer: Rappazzo Concrete,NA,NA,NA,"Delmar, NY",NA,NA,NA,NA,NA,NA,NA,NA,y,NA,NA,y,NA,NA
+technical,NA,2022-02-07,NA,Programming languages:,NA,NA,NA,NA,R and Python,NA,NA,NA,NA,y,NA,NA,NA,NA,NA,NA,NA,NA
+technical,NA,2022-02-08,NA,Web development,NA,NA,NA,NA,"(Rmarkdown, HTML, GitHub Pages)",NA,NA,NA,NA,y,NA,NA,NA,NA,NA,NA,NA,NA
+,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,,,,,,,,

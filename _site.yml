@@ -13,8 +13,8 @@ navbar:
       href: suny_geneseo_bac/suny_geneseo_bac2022.html
     - text: "Final Round Slides"
       href: suny_geneseo_bac2022_v2/suny_geneseo_bac2022_v2.html
-    - text: "Resume"
-      href: resume.html
+    - text: "cv"
+      href: cv.html
     - text: "DANL 310 Homework"
       href: hw.html
 

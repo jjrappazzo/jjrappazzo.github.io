@@ -61,18 +61,12 @@ blank_year_when_repeated <- function(cv_entry_tibble){
 
 
 
-# Summary
+
 
 :::: {style="display: flex;"}
 
 ::: {}
-I view myself as an **applied economist** with interest in the field of **environmental economics** and a particular focus on **climate change policy**. Methodologically, I make use of **econometric/machine learning methods and data science tools** to conduct empirical analysis. I also use computational methods to solve **integrated assessment models (IAM) of climate change** as well as theoretical economic models, such as **dynamic contracts**.
 
-
-My **research** focuses on how to improve **effectiveness of climate policy** at both micro and macro levels. In particular, I am interested in building relevant climate-economy models that analyze **the interaction between economies and the climate under risks arising from (1) climate change and (2) a transition to carbon-neutral economies**.
-
-
-As **a teacher in economics and data science**, my goal is to equip students with the essential analytical tools of machine learning, econometrics, and data analytics to **think critically about business and socioeconomic real-world issues**. As an instructor, I let students use those analytical tools to deal with important **business strategies, social issues, and individual decision-making**. 
 
 
 Here is my [Resume `r fa("fas fa-file-pdf", fill = "red")`](Jason Rappazzo Resume.pdf).
@@ -82,7 +76,7 @@ Here is my [Resume `r fa("fas fa-file-pdf", fill = "red")`](Jason Rappazzo Resum
 
 
 ::: {}
-![](bchoe20201027.jpg){width=75%}
+![](Jason.jpg){width=75%}
 :::
 
 ::::
@@ -129,7 +123,7 @@ cv_entries %>%
 
 <br>
 
-# Service
+# Volunteering
 ```{r}
 cv_entries %>% 
   filter(type == 'service') %>% 
@@ -167,7 +161,7 @@ cv_entries %>%
 
 <br>
 
-# Professional activities
+# Extracurricular activities
 ```{r}
 cv_entries %>% 
   filter(type == 'prof-act') %>% 
@@ -199,14 +193,14 @@ cv_entries %>%
  
 <br>
 
-# Miscelaneous
-## Computing skills
+
+# Computing skills
 ```{r}
 cv_entries %>% 
   filter(type == 'technical') %>% 
   mutate(icon = case_when(
     str_detect(what, "data analysis") ~ "fa-bar-chart",
-    str_detect(what, "research") ~ "fa-flask",
+    str_detect(what, "Programming") ~ "fa-flask",
     str_detect(what, "Web") ~ "fa-laptop"
   )) %>% 
   mutate(what = str_c("<i class='fa fa-lg ", icon, "'></i> &nbsp;<span class='cv-entry-title'>", what, "</span> ", additional_info)) %>% 
@@ -219,16 +213,16 @@ cv_entries %>%
 <br>
 
 
-## Skills & volunteering
+
 ```{r}
-cv_entries %>%
-  filter(type == 'volunteering') %>%
-  mutate(what = str_c("<span class='cv-entry-title'>", what, "</span><br class='work-break'>", where)) %>%
-  mutate(what = ifelse(!is.na(additional_info), str_c(what, "<br>", additional_info), what)) %>%
-  arrange(desc(date_end)) %>% 
-  select(year, what) %>%
-  kbl(padding = 0, col.names = NULL, escape = FALSE)  %>%
-  kable_styling( bootstrap_options = c("hover", "condensed")) %>% 
-  column_spec(1, width = "15%")
+# cv_entries %>%
+#   filter(type == 'volunteering') %>%
+#   mutate(what = str_c("<span class='cv-entry-title'>", what, "</span><br class='work-break'>", where)) %>%
+#   mutate(what = ifelse(!is.na(additional_info), str_c(what, "<br>", additional_info), what)) %>%
+#   arrange(desc(date_end)) %>% 
+#   select(year, what) %>%
+#   kbl(padding = 0, col.names = NULL, escape = FALSE)  %>%
+#   kable_styling( bootstrap_options = c("hover", "condensed")) %>% 
+#   column_spec(1, width = "15%")
 ```
 
