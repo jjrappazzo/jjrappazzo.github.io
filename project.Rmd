@@ -3,7 +3,7 @@ title: "Covid-19 Research Project"
 subtitle: "Business Analytics Competition 2022<br><br>" 
 author: 
   - "Jason Rappazzo"
-  - "James Jordon"
+  - "James Jordan"
   - <br>
 date: "April 14, 2022<br><br><br>"
 output: 

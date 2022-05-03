@@ -161,7 +161,7 @@ cv_entries %>%
 
 <br>
 
-# Extracurricular activities
+# Extracurricular Activities
 ```{r}
 cv_entries %>% 
   filter(type == 'prof-act') %>% 
@@ -174,7 +174,7 @@ cv_entries %>%
 
 <br>
 
-# Hornors & Awards
+# Honors & Awards
 ```{r}
 cv_entries %>% 
   filter(type == 'awards') %>%
@@ -194,7 +194,7 @@ cv_entries %>%
 <br>
 
 
-# Computing skills
+# Computing Skills
 ```{r}
 cv_entries %>% 
   filter(type == 'technical') %>% 
