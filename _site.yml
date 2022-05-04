@@ -17,6 +17,8 @@ navbar:
       href: cv.html
     - text: "DANL 310 Homework"
       href: hw.html
+    - text: "Shiny app"
+      href: test_app.html
 
 output:
   html_document:
