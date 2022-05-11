@@ -5,10 +5,10 @@ account: jjrappazzo
 server: shinyapps.io
 hostUrl: https://api.shinyapps.io/v1
 appId: 6281508
-bundleId: 5896402
+bundleId: 5896480
 url: https://jjrappazzo.shinyapps.io/HomeworkApp/
-when: 1652294042.63183
-lastSyncTime: 1652294042.63183
+when: 1652295080.07487
+lastSyncTime: 1652295080.07487
 asMultiple: FALSE
 asStatic: FALSE
-ignoredFiles: HomeworkApp.Rmd|shiny_app.R
+ignoredFiles: shiny_app.R
