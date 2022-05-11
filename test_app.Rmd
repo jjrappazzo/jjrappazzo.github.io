@@ -1,6 +1,6 @@
 ---
 title: "TITLE"
-subtitle: "SUBTITLE"
+subtitle: SUBTITLE
 ---
 ````{=html}
 <style>iframe{height: 1200px; width: 800px}</style>

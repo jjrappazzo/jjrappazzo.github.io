@@ -1,0 +1,13 @@
+---
+title: "Stringency Index Shiny App"
+output:
+  html_document:
+    theme: united
+    highlight: tango
+---
+````{=html}
+<style>iframe{height: 1200px; width: 800px}</style>
+<iframe height="100%" width="100%" frameborder="no"
+src="https://jjrappazzo.shinyapps.io/HomeworkApp/">
+</iframe>
+```` 

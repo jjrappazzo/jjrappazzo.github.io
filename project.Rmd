@@ -214,3 +214,98 @@ rstatix::get_summary_stats(oxford, type = "robust")
 rstatix::get_summary_stats(country_info, type = "robust")
 ```
 
+<br>
+
+## Bloomberg Covid Resiliency
+
+They have created resiliency rankings for the world's largest 53 largest economies.
+Country Rank is based on their success with controlling the virus with the least amount of social economic disruptions.
+
+<br>
+
+**Reopening Group**: Vaccine Doses Per 100 People, Lockdown Severity, Flight Capacity, and Vaccinated Travel Routs.
+
+**Covid Status Group**: 1-Month Cases per 100k, 3-Month Case Fatality Rate, and Deaths Per 1 Million.
+
+**Quality of Life Group**: Community Mobility, 2022 GDP Growth Forecast, Universal Healthcare Coverage, Human Development Index.
+
+<br>
+
+## Methods
+
+**How the Rankings are aggregated:**
+They used the "Max-Min" method where 100 indicates the best performance and 0 indicated the worst.
+The final score is determined by averaging the country's performance across all 12 indicators. With equal weight.
+
+<br>
+
+# Characterizing Government Responces
+Utilizing **Bloomberg's data**, we used clustering analysis to discover governments that had similar responses.
+We used **Principle Component (PC) Analysis** to characterize twelve Bloomberg indices into the two PCs that best explain the variance of the Bloomberg indices.
+
+<br>
+
+![](clustering_pc.png)
+
+<br> 
+
+This is the result of clustering on the Data. The X axis is representative of PC1, and the Y axis is representative of PC2
+
+The value of PC1 is negatively correlated with vaccine doses per 100, and healthcare coverage. PC1 is positively correlated with 3-month case fatality rate.
+
+PC2 is negatively correlated with flight capacity, and vaccinates travel roots, while it is positively correlated with 2021 GDP Growth Forecast.
+
+Cluster 5 shows countries who had low vaccine doses per 100 and healthcare coverage, which is shown by PC1, and had moderate GDP growth forecast, which is shown by PC2.
+
+<br>
+
+# Variation in Government Response 
+![](trend_strengency.png)
+
+<br> 
+
+The graphs shown are representative of government stringency. The Gray lines represent each individual country’s government stringencies, and the blue is the trend line for the entire continent. As you can see, Africa, the Americas, and Asia all had similar negative trends regarding stringency. Europe did not follow this trend, as stringency fluctuated greatly over time. In Oceania, government stringency has steadily increased since late 2021 going into 2022.
+
+<br>
+
+![](trend_strengency.png)
+
+<br>
+
+![](trend_rep_rate.png)
+
+<br>
+
+We grouped the data by continent to emphasize the differences in reproduction rate around the world as the pandemic went on. We can see, for example, when comparing the Americas to Asia in January of 2022 the reproduction rate in Asia was much higher than that of America. This can be due to many different factors, but it may be due to level of government trust or differences in policy.
+
+<br>
+
+# Regression Analysis
+We used the **fixed effect (FE)** linear regression models to estimate the effect of COVID-19 on various outcomes.
+
+Panel data allows us to control for variables we cannot observe or measure like cultural factors or differences in social norms across countries.
+
+We also utilized interaction terms to see whether the characteristics of a particular policy changes the effect on the outcome (reproduction rate and death per capita)
+
+<br>
+
+## Reproduction Rate of COVID-19
+As seen in our previous graphic, the reproduction rate of COVID-19 is essentially the spreadability of the virus.
+
+It is the average number of secondary cases produced by a primary case.
+
+It may be greater than one when the number of infected individuals is increasing.
+
+<br>
+
+![](tab_rep1.png)
+
+<br>
+
+![](tab_rep2.png)
+
+<br>
+
+
+
+
