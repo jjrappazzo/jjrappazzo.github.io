@@ -18,8 +18,11 @@ output:
 ---
 
 # Introduction
+
+<br>
+
 ## Motivation for the Project
-Our motivation for the project was mostly attributed to the Business Analytics Competition at Manhattan College. As we know, the Covid-19 pandemic impacted people across every inch of the world. By looking at different country's government response to the pandemic, we can look at how the country fared throughout the pandemic and see what policies were effective. Over the past two years, COVID-19 has filled hospitals worldwide and taken countless lives in the process. We want to look at the data to:
+Our motivation for the project was mostly attributed to the Business Analytics Competition at Manhattan College. As we know, the Covid-19 pandemic impacted people across every inch of the world. By looking at different country's government response to the pandemic, we can look at how the country fared and see what policies were effective. Over the past two years, COVID-19 has filled hospitals worldwide and taken countless lives in the process. We want to look at the data to:
 
 
 * Find trends in government responses in response to the pandemic.
@@ -27,8 +30,6 @@ Our motivation for the project was mostly attributed to the Business Analytics C
 * Discover factors that contribute to COVID-19 deaths.
 
 * Explore the reproductive rate of the virus.
-
-* Look at how the pandemic impacted the growth rates of economies around the world.
 
 <br>
 
@@ -91,7 +92,7 @@ They collect data on 180 different countries and 23 different indicators.
 
 The data collection began on January 1st, 2020 which marks the very early stages of the global pandemic.
 
-
+<br>
 
 ### Indicators Utilized
 There are 21 live indicators that are imputed into the dataset daily.
@@ -104,6 +105,7 @@ There are 21 live indicators that are imputed into the dataset daily.
 
 **Vaccine Policies**: V1-V4
 
+<br>
 
 ### Data Types
 
@@ -172,9 +174,11 @@ So far, Oxford has incorporated data for Brazilian states, Canadian provinces an
 rstatix::get_summary_stats(oxford, type = "robust")
 ```
 
+<br>
+
 ### Stringency Index Across Countries
 ````{=html}
-<style>iframe{height: 1200px; width: 800px}</style>
+<style>iframe{height: 600px; width: 800px}</style>
 <iframe height="100%" width="100%" frameborder="no"
 src="https://jjrappazzo.shinyapps.io/HomeworkApp/">
 </iframe>
@@ -226,7 +230,11 @@ rstatix::get_summary_stats(country_info, type = "robust")
 ```
  
 
-# Conceptual Framework - Variation in Government Response
+# Conceptual Framework 
+
+<br>
+
+## Variation in Government Response
  
 ![](trend_strengency.png)
 

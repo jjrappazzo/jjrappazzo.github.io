@@ -364,14 +364,14 @@ div.tocify {
 
 <div id="introduction" class="section level1" number="1">
 <h1><span class="header-section-number">1</span> Introduction</h1>
+<p><br></p>
 <div id="motivation-for-the-project" class="section level2" number="1.1">
 <h2><span class="header-section-number">1.1</span> Motivation for the Project</h2>
-<p>Our motivation for the project was mostly attributed to the Business Analytics Competition at Manhattan College. As we know, the Covid-19 pandemic impacted people across every inch of the world. By looking at different country’s government response to the pandemic, we can look at how the country fared throughout the pandemic and see what policies were effective. Over the past two years, COVID-19 has filled hospitals worldwide and taken countless lives in the process. We want to look at the data to:</p>
+<p>Our motivation for the project was mostly attributed to the Business Analytics Competition at Manhattan College. As we know, the Covid-19 pandemic impacted people across every inch of the world. By looking at different country’s government response to the pandemic, we can look at how the country fared and see what policies were effective. Over the past two years, COVID-19 has filled hospitals worldwide and taken countless lives in the process. We want to look at the data to:</p>
 <ul>
 <li><p>Find trends in government responses in response to the pandemic.</p></li>
 <li><p>Discover factors that contribute to COVID-19 deaths.</p></li>
 <li><p>Explore the reproductive rate of the virus.</p></li>
-<li><p>Look at how the pandemic impacted the growth rates of economies around the world.</p></li>
 </ul>
 <p><br></p>
 <p>We are going to make visualizations using ggplot, shiny, and others to increase the readability of our findings. It is important to become educated on the factors that affect Covid-19 deaths in the event another global pandemic becomes present. We hope to display trends that may not be apparently obvious in the hopes that this will aid in the current pandemic and future health problems to come.</p>
@@ -406,6 +406,7 @@ div.tocify {
 <p>Oxford’s goal is to track COVID-19 policy data consistently and use it to compare policy responses to COVID-19.</p>
 <p>They collect data on 180 different countries and 23 different indicators.</p>
 <p>The data collection began on January 1st, 2020 which marks the very early stages of the global pandemic.</p>
+<p><br></p>
 <div id="indicators-utilized" class="section level3" number="2.1.1">
 <h3><span class="header-section-number">2.1.1</span> Indicators Utilized</h3>
 <p>There are 21 live indicators that are imputed into the dataset daily.</p>
@@ -413,6 +414,7 @@ div.tocify {
 <p><strong>Economic Policies</strong>: E1-E4</p>
 <p><strong>Health System Policies</strong>: H1-H8</p>
 <p><strong>Vaccine Policies</strong>: V1-V4</p>
+<p><br></p>
 </div>
 <div id="data-types" class="section level3" number="2.1.2">
 <h3><span class="header-section-number">2.1.2</span> Data Types</h3>
@@ -458,10 +460,11 @@ div.tocify {
 {"columns":[{"label":["variable"],"name":[1],"type":["chr"],"align":["left"]},{"label":["n"],"name":[2],"type":["dbl"],"align":["right"]},{"label":["median"],"name":[3],"type":["dbl"],"align":["right"]},{"label":["iqr"],"name":[4],"type":["dbl"],"align":["right"]}],"data":[{"1":"C1_Flag","2":"225622","3":"1.00","4":"0.00"},{"1":"C1_School closing","2":"280186","3":"1.00","4":"2.00"},{"1":"C2_Flag","2":"216621","3":"1.00","4":"0.00"},{"1":"C2_Workplace closing","2":"279905","3":"1.00","4":"1.00"},{"1":"C3_Cancel public events","2":"279722","3":"1.00","4":"1.00"},{"1":"C3_Flag","2":"226303","3":"1.00","4":"0.00"},{"1":"C4_Flag","2":"204047","3":"1.00","4":"0.00"},{"1":"C4_Restrictions on gatherings","2":"279650","3":"3.00","4":"4.00"},{"1":"C5_Close public transport","2":"279489","3":"0.00","4":"1.00"},{"1":"C5_Flag","2":"116450","3":"1.00","4":"1.00"},{"1":"C6_Flag","2":"162539","3":"1.00","4":"1.00"},{"1":"C6_Stay at home requirements","2":"279716","3":"1.00","4":"2.00"},{"1":"C7_Flag","2":"169234","3":"1.00","4":"1.00"},{"1":"C7_Restrictions on internal movement","2":"279655","3":"1.00","4":"2.00"},{"1":"C8_International travel controls","2":"278573","3":"3.00","4":"1.00"},{"1":"ConfirmedCases","2":"279192","3":"48623.50","4":"370925.00"},{"1":"ConfirmedDeaths","2":"279104","3":"800.00","4":"6566.25"},{"1":"ContainmentHealthIndex","2":"278841","3":"56.79","4":"20.18"},{"1":"ContainmentHealthIndexForDisplay","2":"279866","3":"56.55","4":"20.12"},{"1":"Date","2":"292344","3":"20210330.00","4":"10200.00"},{"1":"E1_Flag","2":"155528","3":"0.00","4":"1.00"},{"1":"E1_Income support","2":"265770","3":"1.00","4":"1.00"},{"1":"E2_Debt/contract relief","2":"265667","3":"1.00","4":"2.00"},{"1":"E3_Fiscal measures","2":"146749","3":"0.00","4":"0.00"},{"1":"E4_International support","2":"146645","3":"0.00","4":"0.00"},{"1":"EconomicSupportIndex","2":"265534","3":"37.50","4":"62.50"},{"1":"EconomicSupportIndexForDisplay","2":"266564","3":"37.50","4":"62.50"},{"1":"GovernmentResponseIndex","2":"277125","3":"54.53","4":"19.79"},{"1":"GovernmentResponseIndexForDisplay","2":"278155","3":"54.48","4":"19.79"},{"1":"H1_Flag","2":"266198","3":"1.00","4":"0.00"},{"1":"H1_Public information campaigns","2":"279610","3":"2.00","4":"0.00"},{"1":"H2_Testing policy","2":"278509","3":"2.00","4":"1.00"},{"1":"H3_Contact tracing","2":"276745","3":"2.00","4":"1.00"},{"1":"H4_Emergency investment in healthcare","2":"151099","3":"0.00","4":"0.00"},{"1":"H5_Investment in vaccines","2":"215877","3":"0.00","4":"0.00"},{"1":"H6_Facial Coverings","2":"279443","3":"3.00","4":"1.00"},{"1":"H6_Flag","2":"240925","3":"1.00","4":"0.00"},{"1":"H7_Flag","2":"149042","3":"1.00","4":"0.00"},{"1":"H7_Vaccination policy","2":"279106","3":"2.00","4":"5.00"},{"1":"H8_Flag","2":"198217","3":"1.00","4":"0.00"},{"1":"H8_Protection of elderly people","2":"268835","3":"2.00","4":"2.00"},{"1":"StringencyIndex","2":"279169","3":"51.85","4":"30.56"},{"1":"StringencyIndexForDisplay","2":"280191","3":"51.85","4":"30.56"},{"1":"StringencyLegacyIndex","2":"279270","3":"63.10","4":"26.67"},{"1":"StringencyLegacyIndexForDisplay","2":"280285","3":"63.10","4":"26.67"},{"1":"V1_Vaccine Prioritisation (summary)","2":"198286","3":"1.00","4":"2.00"},{"1":"V2A_Vaccine Availability (summary)","2":"197692","3":"1.00","4":"2.00"},{"1":"V2D_Medically/ clinically vulnerable (Non-elderly)","2":"109932","3":"2.00","4":"1.00"},{"1":"V2E_Education","2":"109932","3":"2.00","4":"1.00"},{"1":"V2F_Frontline workers  (non healthcare)","2":"109932","3":"2.00","4":"0.00"},{"1":"V2G_Frontline workers  (healthcare)","2":"109932","3":"2.00","4":"0.00"},{"1":"V3_Vaccine Financial Support (summary)","2":"197692","3":"5.00","4":"5.00"},{"1":"V4_Mandatory Vaccination (summary)","2":"55733","3":"0.00","4":"0.00"}],"options":{"columns":{"min":{},"max":[10]},"rows":{"min":[10],"max":[10]},"pages":{}}}
   </script>
 </div>
+<p><br></p>
 </div>
 <div id="stringency-index-across-countries" class="section level3" number="2.1.7">
 <h3><span class="header-section-number">2.1.7</span> Stringency Index Across Countries</h3>
-<style>iframe{height: 1200px; width: 800px}</style>
+<style>iframe{height: 600px; width: 800px}</style>
 <iframe height="100%" width="100%" frameborder="no"
 src="https://jjrappazzo.shinyapps.io/HomeworkApp/">
 </iframe>
@@ -499,8 +502,11 @@ src="https://jjrappazzo.shinyapps.io/HomeworkApp/">
 </div>
 </div>
 </div>
-<div id="conceptual-framework---variation-in-government-response" class="section level1" number="3">
-<h1><span class="header-section-number">3</span> Conceptual Framework - Variation in Government Response</h1>
+<div id="conceptual-framework" class="section level1" number="3">
+<h1><span class="header-section-number">3</span> Conceptual Framework</h1>
+<p><br></p>
+<div id="variation-in-government-response" class="section level2" number="3.1">
+<h2><span class="header-section-number">3.1</span> Variation in Government Response</h2>
 <p><img src="trend_strengency.png" /></p>
 <p><br></p>
 <p>The graphs shown are representative of government stringency. The Gray lines represent each individual country’s government stringencies, and the blue is the trend line for the entire continent. As you can see, Africa, the Americas, and Asia all had similar negative trends regarding stringency. Europe did not follow this trend, as stringency fluctuated greatly over time. In Oceania, government stringency has steadily increased since late 2021 going into 2022.</p>
@@ -509,6 +515,7 @@ src="https://jjrappazzo.shinyapps.io/HomeworkApp/">
 <p><br></p>
 <p>We grouped the data by continent to emphasize the differences in reproduction rate around the world as the pandemic went on. We can see, for example, when comparing the Americas to Asia in January of 2022 the reproduction rate in Asia was much higher than that of America. This can be due to many different factors, but it may be due to level of government trust or differences in policy.</p>
 <p><br></p>
+</div>
 </div>
 <div id="models" class="section level1" number="4">
 <h1><span class="header-section-number">4</span> Models</h1>
