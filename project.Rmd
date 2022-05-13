@@ -17,9 +17,9 @@ output:
     highlight: tango
 ---
 
-# Project Overview
-
-For our project we have chosen to analyze government COVID-19 related data. As we all know, COVID-19 has impacted just about everyone around the world. Over the past two years, COVID-19 has filled hospitals worldwide and taken countless lives in the process. We want to look at the data to:
+# Introduction
+## Motivation for the Project
+Our motivation for the project was mostly attributed to the Business Analytics Competition at Manhattan College. As we know, the Covid-19 pandemic impacted people across every inch of the world. By looking at different country's government response to the pandemic, we can look at how the country fared throughout the pandemic and see what policies were effective. Over the past two years, COVID-19 has filled hospitals worldwide and taken countless lives in the process. We want to look at the data to:
 
 
 * Find trends in government responses in response to the pandemic.
@@ -32,11 +32,34 @@ For our project we have chosen to analyze government COVID-19 related data. As w
 
 <br>
 
-## Data
 
+We are going to make visualizations using ggplot, shiny, and others to increase the readability of our findings. It is important to become educated on the factors that affect Covid-19 deaths in the event another global pandemic becomes present. We hope to display trends that may not be apparently obvious in the hopes that this will aid in the current pandemic and future health problems to come.
+
+<br>
+
+## Overview of Modeling Techniques
+**Clustering Analysis:** Grouping data with similar outcomes. More specifically, we wanted to discover countries that had similar government responses to the Covid-19 pandemic.
+
+<br>
+
+**Principal Component Analysis:** The principle components (PCs) describe the hyperellipsoid in N-space that roughly bounds the data.
+
+![](pc.png) 
+
+<br>
+
+**Pooled Ordinary Least Square:** Normal linear regression model fitted using the OLS technique on a flattened version of the panel data set. 
+
+<br>
+
+**Fixed Effect Linear Regression:** Statistical regression model which is useful for working with panel data. Panel data allows us to control for variables that we cannot observe or measure such a cultural factors or differences in social norms across countries.
+
+<br>
+
+# Data 
 For our data analysis, we are utilizing two large datasets. The first is provided by Oxford titled Oxford COVID Government Response Variables. The second dataset is provided by Bloomberg, for which they have created resiliency scores for the 53 top economies in the world.
 
-On top of these two main datasets, we will also be utilizing GDP growth rate data as well as Google COVID-19 Community Mobility Report to aid in our regression and analysis process.
+On top of these two main datasets, we will also be utilizing the Google COVID-19 Community Mobility Report to aid in our regression and analysis process.
 
 ```{r, echo=FALSE, collapse=TRUE, warning=FALSE, message=FALSE}
 library(readxl)
@@ -48,8 +71,8 @@ library(rstatix)
 
 <br>
 
-### Oxford's Data
-```{r, collapse=TRUE, warning=FALSE, message=FALSE}
+## Oxford's Data
+```{r, echo=FALSE,collapse=TRUE, warning=FALSE, message=FALSE}
 #Path name for the dataset
 oxford <- "https://raw.githubusercontent.com/OxCGRT/covid-policy-tracker/master/data/OxCGRT_latest.csv"
 
@@ -62,59 +85,6 @@ rmarkdown::paged_table(oxford)
 
 <br>
 
-### Bloomberg's Data
-```{r, collapse=TRUE, warning=FALSE, message=FALSE}
-
-#Path name for the dataset
-country_info <- "https://covid.ourworldindata.org/data/owid-covid-data.csv"
-
-
-#Read csv file
-country_info <- read_csv(country_info)
-country_info <- country_info %>% 
-  rename(country = location ) %>% 
-  select(country, everything())
-
-rmarkdown::paged_table(country_info)
-```
-
-<br>
-
-## Modeling
-
-We plan to build multiple linear regression models and one unsupervised learning method utilizing clustering. 
-
-The first regression model's dependent variable will be COVID-19 deaths per capita.
-
-The second regression model's dependent variable is the reproductive rate.
-
-The third regression involves the economic impact and our dependent variable will be changes in quarterly GDP.
-
-The unsupervised learning method will be performed on the Bloomberg dataset to find countries who are similar to each other in their government response to the pandemic.
-
-<br>
-
-## Visualizations
-
-We are going to make visualizations using ggplot, plotly, and others to increase the readability of our findings. It is important to become educated on the factors that affect covid deaths in the event another global pandemic becomes present. We hope to display trends that may not be apparently obvious in the hopes that this will aid in the current pandemic and future health problems to come.
-
-<br>
-<br>
-<br>
-
-# Oxford
-```{r, echo=FALSE, collapse=TRUE, warning=FALSE, message=FALSE}
-library(readxl)
-library(tidyverse)
-library(skimr)
-library(rstatix)
-
-```
-
-
-<br>
-
-## Overview
 Oxford’s goal is to track COVID-19 policy data consistently and use it to compare policy responses to COVID-19.
 
 They collect data on 180 different countries and 23 different indicators.
@@ -123,7 +93,7 @@ The data collection began on January 1st, 2020 which marks the very early stages
 
 
 
-## Indicators Utilized
+### Indicators Utilized
 There are 21 live indicators that are imputed into the dataset daily.
 
 **Containment and Closure Policies**: Marked as C1-C8 on the dataset.
@@ -135,7 +105,7 @@ There are 21 live indicators that are imputed into the dataset daily.
 **Vaccine Policies**: V1-V4
 
 
-## Data Types
+### Data Types
 
 There are five kinds of data utilized in the dataset.
 
@@ -151,7 +121,7 @@ There are five kinds of data utilized in the dataset.
 
 <br>
 
-## Policy Indices 
+### Policy Indices 
 
 **Overall Government Response Index**: 
   Calculated using ordinal indicators
@@ -173,7 +143,7 @@ There are five kinds of data utilized in the dataset.
 
 <br>
 
-## Calculation of Policy Indices
+### Calculation of Policy Indices
 
 
 Policy indices are averages of the individual component indicators.
@@ -184,7 +154,7 @@ Where $k$ is the number of component indicators in an index and $I_{j}$ is the s
   
 <br>
 
-## Relation between National and Sub-National Data 
+### Relation between National and Sub-National Data 
 So far, Oxford has incorporated data for Brazilian states, Canadian provinces and territories, Chinese provinces, UK developed nations, and U.S. States.
 
 3 main usage for the OxCGRT data:
@@ -197,26 +167,37 @@ So far, Oxford has incorporated data for Brazilian states, Canadian provinces an
 
 <br>
 
-## Summary Statistics
-```{r, collapse=TRUE, warning=FALSE, message=FALSE}
+### Summary Statistics
+```{r, echo=FALSE,collapse=TRUE, warning=FALSE, message=FALSE}
 rstatix::get_summary_stats(oxford, type = "robust")
 ```
-<br>
-<br>
-<br>
 
-# Bloomberg
+### Stringency Index Across Countries
+````{=html}
+<style>iframe{height: 1200px; width: 800px}</style>
+<iframe height="100%" width="100%" frameborder="no"
+src="https://jjrappazzo.shinyapps.io/HomeworkApp/">
+</iframe>
+```` 
+## Bloomberg's Data
+```{r, echo=FALSE,collapse=TRUE, warning=FALSE, message=FALSE}
 
-<br>
+#Path name for the dataset
+country_info <- "https://covid.ourworldindata.org/data/owid-covid-data.csv"
 
-## Bloomberg's Summary Statistics
-```{r, collapse=TRUE, warning=FALSE, message=FALSE}
-rstatix::get_summary_stats(country_info, type = "robust")
+
+#Read csv file
+country_info <- read_csv(country_info)
+country_info <- country_info %>% 
+  rename(country = location ) %>% 
+  select(country, everything())
+
+rmarkdown::paged_table(country_info)
 ```
 
 <br>
 
-## Bloomberg Covid Resiliency
+### Bloomberg Covid Resiliency
 
 They have created resiliency rankings for the world's largest 53 largest economies.
 Country Rank is based on their success with controlling the virus with the least amount of social economic disruptions.
@@ -231,7 +212,7 @@ Country Rank is based on their success with controlling the virus with the least
 
 <br>
 
-## Methods
+### Methods
 
 **How the Rankings are aggregated:**
 They used the "Max-Min" method where 100 indicates the best performance and 0 indicated the worst.
@@ -239,11 +220,121 @@ The final score is determined by averaging the country's performance across all 
 
 <br>
 
-# Characterizing Government Responces
+### Summary Statistics
+```{r, echo=FALSE,collapse=TRUE, warning=FALSE, message=FALSE}
+rstatix::get_summary_stats(country_info, type = "robust")
+```
+ 
+
+# Conceptual Framework - Variation in Government Response
+ 
+![](trend_strengency.png)
+
+<br> 
+
+The graphs shown are representative of government stringency. The Gray lines represent each individual country’s government stringencies, and the blue is the trend line for the entire continent. As you can see, Africa, the Americas, and Asia all had similar negative trends regarding stringency. Europe did not follow this trend, as stringency fluctuated greatly over time. In Oceania, government stringency has steadily increased since late 2021 going into 2022.
+
+<br>
+
+![](trend_rep_rate.png)
+
+<br>
+
+We grouped the data by continent to emphasize the differences in reproduction rate around the world as the pandemic went on. We can see, for example, when comparing the Americas to Asia in January of 2022 the reproduction rate in Asia was much higher than that of America. This can be due to many different factors, but it may be due to level of government trust or differences in policy.
+
+<br>
+ 
+
+# Models
+
+<br>
+
+## Clustering Using Pricipal Component Analysis
 Utilizing **Bloomberg's data**, we used clustering analysis to discover governments that had similar responses.
 We used **Principle Component (PC) Analysis** to characterize twelve Bloomberg indices into the two PCs that best explain the variance of the Bloomberg indices.
 
 <br>
+
+## Reproduction Rate Linear Regression
+
+<br>
+
+$\textit{ReproductionRate}{_i}{_t} = \beta{_0} + \beta{_1}*GovernmentPolicies{_i}{_t} + \upsilon{_i} + \lambda{_t} + \epsilon{_i}{_t}$
+
+<br>
+
+**Where:**
+
+$\upsilon{_t} = \text{Country Fixed Effect}$
+
+<br>
+
+$\lambda{_t} = \text{Daily Fixed Effect}$
+
+<br>
+
+$\epsilon{_t} = \text{Error Term}$
+
+<br>
+
+## Death Per Capita Linear Regression
+
+<br>
+
+$\textit{DeathPerCapita}{_i}{_t} = \beta{_0} + \beta{_1}*GovernmentPolicies{_i}{_t} + \upsilon{_i} + \lambda{_t} + \epsilon{_i}{_t}$
+
+<br>
+
+**Where:**
+
+$\upsilon{_t} = \text{Country Fixed Effect}$
+
+<br>
+
+$\lambda{_t} = \text{Daily Fixed Effect}$
+
+<br>
+
+$\epsilon{_t} = \text{Error Term}$
+
+<br>
+
+## Description of Government Policy Variables
+
+**lag2_StringencyIndex**: 
+
+**lag2_E1_Income support**:
+
+**Lag2_E1_Flag**:
+
+**lag2_E2_Debt/contract relief**:
+
+**lag2_H2_Testing policy**:
+
+**lag2_H3_Contact tracing**:
+
+**lag2_H4_Emergency investment in healthcare**:
+
+**lag2_H5_Investment in vaccines**:
+
+**lag2_H6_Facial Coverings**:
+
+**lag2_H6_Flag**:
+
+**lag2_H7_Vaccination policy**:
+
+**lag2_H7_Flag**:
+
+**lag2_E1_Income Support:lag2_E1_Flag**:
+
+**lag2_H6_Facial Coverings:lag2_H6_Flag**:
+
+**lag2_H7_Vaccination policy:lag2_Hy_Flag MobilityIndex**:
+# Results
+
+<br>
+
+## Clustering Analysis Results
 
 ![](clustering_pc.png)
 
@@ -259,52 +350,46 @@ Cluster 5 shows countries who had low vaccine doses per 100 and healthcare cover
 
 <br>
 
-# Variation in Government Response 
-![](trend_strengency.png)
-
-<br> 
-
-The graphs shown are representative of government stringency. The Gray lines represent each individual country’s government stringencies, and the blue is the trend line for the entire continent. As you can see, Africa, the Americas, and Asia all had similar negative trends regarding stringency. Europe did not follow this trend, as stringency fluctuated greatly over time. In Oceania, government stringency has steadily increased since late 2021 going into 2022.
+## Linear Regression Results
 
 <br>
 
-![](trend_strengency.png)
+### Reproduction Rate Results
+
+![](table_reproduction.png)
+
 
 <br>
 
-![](trend_rep_rate.png)
+![](fig_rep_beta.png)
+
+### Death Per Capita Results
+
+![](table_stringency.png)
 
 <br>
 
-We grouped the data by continent to emphasize the differences in reproduction rate around the world as the pandemic went on. We can see, for example, when comparing the Americas to Asia in January of 2022 the reproduction rate in Asia was much higher than that of America. This can be due to many different factors, but it may be due to level of government trust or differences in policy.
+![](fig_death_beta.png)
+ 
 
-<br>
+# Discussion
 
-# Regression Analysis
-We used the **fixed effect (FE)** linear regression models to estimate the effect of COVID-19 on various outcomes.
+discussion on the main findings from the machine learning models
+ 
 
-Panel data allows us to control for variables we cannot observe or measure like cultural factors or differences in social norms across countries.
+# Conclusion
 
-We also utilized interaction terms to see whether the characteristics of a particular policy changes the effect on the outcome (reproduction rate and death per capita)
+## brief summary of the research
+## limitation of the research
+## future direction of the research
 
-<br>
 
-## Reproduction Rate of COVID-19
-As seen in our previous graphic, the reproduction rate of COVID-19 is essentially the spreadability of the virus.
 
-It is the average number of secondary cases produced by a primary case.
 
-It may be greater than one when the number of infected individuals is increasing.
 
-<br>
 
-![](tab_rep1.png)
 
-<br>
 
-![](tab_rep2.png)
-
-<br>
 
 
 
