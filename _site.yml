@@ -9,9 +9,7 @@ navbar:
       href: about.html
     - text: "Project"
       href: project.html
-    - text: "Project Slides"
-      href: suny_geneseo_bac/suny_geneseo_bac2022.html
-    - text: "Final Round Slides"
+    - text: "Business Analytics Competition"
       href: suny_geneseo_bac2022_v2/suny_geneseo_bac2022_v2.html
     - text: "cv"
       href: cv.html

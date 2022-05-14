@@ -38,6 +38,16 @@ We are going to make visualizations using ggplot, shiny, and others to increase 
 
 <br>
 
+## Research Questions
+
+To what extent do government Covid-19 Policies have on the reproduction rate of the virus?
+
+<br>
+
+To what extent do government Covid-19 Policies have on the death per capita rate of the virus?
+
+<br>
+
 ## Overview of Modeling Techniques
 **Clustering Analysis:** Grouping data with similar outcomes. More specifically, we wanted to discover countries that had similar government responses to the Covid-19 pandemic.
 
@@ -309,35 +319,48 @@ $\epsilon{_t} = \text{Error Term}$
 
 ## Description of Government Policy Variables
 
-**lag2_StringencyIndex**: 
+Please note that all variables with the **lag2** prefix are lagged **1 week** for the reproduction rate linear regression and **1 month** for the death per capita regression.
 
-**lag2_E1_Income support**:
+We chose to use 1 week lagged variables to account for a possible delay in the ever changing reproduction rate. We chose 1 month lagged variables for the time it takes for policies to be implemented as well as the time it takes for the death per capita rate to change. 
 
-**Lag2_E1_Flag**:
+Please not that all variables with the **Flag** suffix are used to account for differences in policy characteristics. The flag is similar to a dummy variable with different characteristics depending on the particular policy.
 
-**lag2_E2_Debt/contract relief**:
+**lag2_StringencyIndex**: Measures the strictness of lockdown style. It is calculated using all ordinal containment and closure policy indicators, plus an indicator recording public information campaigns.
 
-**lag2_H2_Testing policy**:
+**lag2_E1_Income support**: Recorded if the government is providing direct cash payments to people who lose their jobs or cannot work. This only includes payments to firms if explicitly linked to payroll or salaries. It is calculated on an ordinal scale. **0-** No income support. **1-** The government is replacing less than 50% of lost salary (or if a flat sum, it is less than 50% median salary). **2-** The government is replacing 50% or more of lost salary (or if a flat sum, it is greater than 50% median salary). 
 
-**lag2_H3_Contact tracing**:
+**Lag2_E1_Flag**: Binary flag for sectoral scope. **0-** formal sector workers only or informal sector workers only. **1-** all workers.
 
-**lag2_H4_Emergency investment in healthcare**:
+**lag2_E2_Debt/contract relief**: Record if the government is freezing financial obligations for households (eg stopping loan repayments, preventing services like water from stopping, or banning evictions). It is calculated on an ordinal scale. **0-** no debt/contract relief. **1-** narrow relief, specific to one kind of contract. **2-** broad debt/contract relief
 
-**lag2_H5_Investment in vaccines**:
 
-**lag2_H6_Facial Coverings**:
 
-**lag2_H6_Flag**:
+**lag2_H2_Testing policy**: Records policies about testing for current infection (PCR tests) not testing for immunity (antibody test). It is calculated on an ordinal scale. **0-** no testing policy. **1-** only those who both (a) have symptoms AND (b) meet specific criteria (eg key workers, admitted to hospital, came into contact with a known case, returned from overseas). **2-** testing of anyone showing Covid-19 symptoms. **3-** open public testing (eg "drive through" testing available to asymptomatic people).
 
-**lag2_H7_Vaccination policy**:
 
-**lag2_H7_Flag**:
 
-**lag2_E1_Income Support:lag2_E1_Flag**:
+**lag2_H3_Contact tracing**: Records government policy on contact tracing after a positive diagnosis. It is calculated on an ordinal scale. **0-** no contact tracing. **1-** limited contact tracing; not done for all cases. **2-** comprehensive contact tracing; done for all identified cases. 
+ 
 
-**lag2_H6_Facial Coverings:lag2_H6_Flag**:
+**lag2_H4_Emergency investment in healthcare**: Announced short term spending on healthcare system, eg hospitals, masks, etc. Note: only record amount additional to previously announced spending. Record monetary value in USD. **0-** no new spending that day.
 
-**lag2_H7_Vaccination policy:lag2_Hy_Flag MobilityIndex**:
+
+
+**lag2_H5_Investment in vaccines**: Announced public spending on Covid-19 vaccine development.  Note: only record amount additional to previously announced spending. Record monetary value in USD. **0-** no new spending that day.
+
+**lag2_H6_Facial Coverings**: Record policies on the use of facial coverings outside the home. It is calculated on an ordinal scale. **0-** No policy. **1-** Recommended. **2-** Required in some specified shared/public spaces outside the home with other people present, or some situations when social distancing not possible. **3-** Required in all shared/public spaces outside the home with other people present or all situations when social distancing not possible. **4-** Required outside the home at all times regardless of location or presence of other people.
+
+
+**lag2_H6_Flag**: Binary flag for geographic scope. **0-** Targeted. **1-** General. 
+
+**lag2_H7_Vaccination policy**: Record policies for vaccine delivery for different groups. It is measured on an ordinal scale. **0-** No availability. **1-** Availability for ONE of following: key workers/ clinically vulnerable groups (non elderly) / elderly groups. **2-** Availability for TWO of following: key workers/ clinically vulnerable groups (non elderly) / elderly groups. **3-** Availability for ALL of following: key workers/ clinically vulnerable groups (non elderly) / elderly groups. **4-** Availability for all three plus partial additional availability (select broad groups/ages). **5-** Universal availability
+
+ 
+**lag2_H7_Flag**: Binary flag for cost. **0**- At cost to individual (or funded by NGO, insurance, or partially government funded). **1**- No or minimal cost to individual (government funded or subsidized).
+
+**lag2_H7_Vaccination policy:lag2_Hy_Flag MobilityIndex**: The Community Google Mobility Reports show movement trends by region, across different categories of places.
+
+
 # Results
 
 <br>
@@ -391,7 +414,7 @@ discussion on the main findings from the machine learning models
 ## limitation of the research
 ## future direction of the research
 
-
+# Works Cited
 
 
 
