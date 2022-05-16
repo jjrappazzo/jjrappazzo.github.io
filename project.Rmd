@@ -5,14 +5,9 @@ author:
   - "Jason Rappazzo"
   - "James Jordan"
   - <br>
-date: "April 14, 2022<br><br><br>"
+date: "May 16, 2022<br><br><br>"
 output: 
   html_document:
-    df_print: paged
-    toc: true
-    toc_depth: 2
-    toc_float: true
-    number_sections: true
     theme: united
     highlight: tango
 ---
@@ -181,7 +176,7 @@ So far, Oxford has incorporated data for Brazilian states, Canadian provinces an
 
 ### Summary Statistics
 ```{r, echo=FALSE,collapse=TRUE, warning=FALSE, message=FALSE}
-rstatix::get_summary_stats(oxford, type = "robust")
+rmarkdown::paged_table(skim_without_charts(oxford))
 ```
 
 <br>
@@ -236,7 +231,7 @@ The final score is determined by averaging the country's performance across all 
 
 ### Summary Statistics
 ```{r, echo=FALSE,collapse=TRUE, warning=FALSE, message=FALSE}
-rstatix::get_summary_stats(country_info, type = "robust")
+rmarkdown::paged_table(skim_without_charts(country_info))
 ```
  
 
@@ -366,7 +361,7 @@ Please not that all variables with the **Flag** suffix are used to account for d
 <br>
 
 ## Clustering Analysis Results
-
+Figure 1
 ![](clustering_pc.png)
 
 <br> 
@@ -386,38 +381,65 @@ Cluster 5 shows countries who had low vaccine doses per 100 and healthcare cover
 <br>
 
 ### Reproduction Rate Results
-
-![](table_reproduction.png)
+Figure 2
+![](tab_rep1.png)
+![](tab_rep2.png)
 
 
 <br>
 
+Figure 3
 ![](fig_rep_beta.png)
 
 ### Death Per Capita Results
-
+Figure 4
 ![](table_stringency.png)
 
 <br>
-
+Figure 6
 ![](fig_death_beta.png)
  
 
 # Discussion
 
-discussion on the main findings from the machine learning models
+  Starting with the reproduction rate regression model (figure 2), we had 5 different regression models. The first model is the pooled ordinary least square, the second utilized a daily fixed effect, the third model utilizes a country fixed effect, the fourth utilizes both the daily and country fixed effect, and the fifth and last model utilized both fixed effects and the Google mobility index. As we can see by looking at the R-squared values, the use of the two fixed effects increased our explanatory power of our model greatly. The use of the Google mobility index increased the significance of our beta estimates. When looking at the fifth model, we can conclude that 37.9 percent of the variation in the reproduction rate of Covid-19 can be explained by the variation in the government policies. Looking at figure 3, we can see the graphical representation of our beta estimates. Our estimates are graphed at the 95% confidence interval. The stringency index was statistically significantly different from zero and negative meaning that the higher the stringency index, the lower the reproduction rate of the virus. This makes sense, but the magnitude is fairly small. Vaccination policy is also statistically significantly different from zero and negative meaning that as more people were eligible for the vaccine, the reproduction rate decreased. This is one of the largest  negative magnitudes from a government policy in our regression results. To interpret the flagged and non-flagged variables, you would need to add the two beta estimates together. In our results, facial coverings ended up combining to have a negative beta estimate, however it is not statistically significantly different from 0. Investment in vaccines and investment in healthcare had no effect on the reproduction rate at all. The contact tracing beta estimate was negative however, it is not statistically  significantly different from zero. Testing policy was statistically significantly different from zero and negative meaning that the stricter the testing policy was, the less the reproduction rate of the virus was. Debt/contract relief and the combination of flagged and non-flagged income support were statistically significantly different from zero and positive. This could be due to many reasons, but monetary policies most likely have little to do with the spreadibility of the virus.
+  
+<br>
+  
+  Moving on to the death per capita regression results (figure 4), we utilized the same 5 regression models. The first model is the pooled ordinary least square, the second utilized a daily fixed effect, the third model utilizes a country fixed effect, the fourth utilizes both the daily and country fixed effect, and the fifth and last model utilized both fixed effects and the Google mobility index. Again, while looking at the R-Squared values, the utilization of the fixed effects along with the google mobility index increased our values substantially. Using the fifth model we are able to conclude that 53.8 percent of the variation in the death per capita can be explained by the variation in the government policies. Looking at figure 5, we once again have the graphical representation of our beta estimates. The stringency index was statistically significantly different from zero and positive. It must be noted that the magnitude of this estimate is very small. The flagged and non-flagged vaccination policy combined to have a beta estimate not statistically significantly different from zero. Flagged and non-flagged facial coverings combined to have a negative beta estimate, but not statistically significantly different from zero. Investment in vaccines and emergency investment in healthcare did not have any impact on the death per capita rate. Testing policy had the largest impact on reducing the death per capita rate. It had the highest negative magnitude and is statistically significantly different from zero. Debt/contact relief had a slight negative magnitude, but it is not statistically significantly different from zero. Flagged and non-flagged income support combined to create a beta estimate that is not statistically significantly different from zero.
+  
+<br>
+
+Overall, vaccination policy and testing policy had the most influential impact on the reproduction rate of Covid-19. Testing policy also had the most influential impact on the death per capita rate. This is something to keep in mind in the event another global health crisis arises. It is important for people to be eligible for the vaccine. Also, the encouragement and availability of testing for Covid-19 or any other virus that may arise is critical.  
+ 
  
 
 # Conclusion
 
-## brief summary of the research
-## limitation of the research
-## future direction of the research
+Overall, vaccination policy and testing policy had the most influential impact on the reproduction rate of Covid-19. Testing policy also had the most influential impact on the death per capita rate. This is something to keep in mind in the event another global health crisis arises. It is important for people to be eligible for the vaccine. Also, the encouragement and availability of testing for Covid-19 or any other virus that may arise is critical.  
+
+<br>
+
+As for limitations of this research, the data sets we are working with were extremely large. Running the regressions as well as the visualizations were very hard for the processor on my laptop. In terms of efficiency, this was a frustrating aspect of the project because I would have liked to play around with the data visualizations more to try to discover more unknown trends. 
+
+<br>
+
+Thinking ahead into future research, I know that many countries did not report the full amount of Covid-19 related cases or deaths. If more data does come out in the future, I would like to run these regressions again to see if there are any changes in magnitude or sign changes in the government policies we worked with.  
 
 # Works Cited
+Hale, Thomas, Jessica Anania, Noam Angrist, Thomas Boby, Emily Cameron-Blake, Martina Di Folco, Lucy Ellen, Rafael Goldszmidt, Laura Hallas, Beatriz Kira, Maria Luciano, Saptarshi Majumdar, Radhika Nagesh, Anna Petherick, Toby Phillips, Helen Tatlow, Samuel Webster, Andrew Wood, Yuxi Zhang, “Variation in Government Responses to COVID-19” Version 12.0. Blavatnik School of Government Working Paper. 11 June 2021. Available: https://www.bsg.ox.ac.uk/covidtracker
 
+<br>
 
+Thomas Hale, Noam Angrist, Rafael Goldszmidt, Beatriz Kira, Anna Petherick, Toby Phillips, Samuel Webster, Emily Cameron-Blake, Laura Hallas, Saptarshi Majumdar, and Helen Tatlow. (2021). “A global panel database of pandemic policies (Oxford COVID-19 Government Response Tracker).” Nature Human Behaviour. https://doi.org/10.1038/s41562-021-01079-8
 
+<br>
+
+World Economic Forum, “Global Risks Report 2022,” 11 Jan. 2022, https://www.weforum.org/reports/global-risks-report-2022/in-full/chapter-6-refreshing-resilience-from-covid-19-lessons-to-a-whole-of-society-response.
+
+<br>
+
+Zumel, Nina, et al. Practical Data Science with R. Manning Publications Co., 2020. 
 
 
 
